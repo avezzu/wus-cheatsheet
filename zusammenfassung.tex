@@ -71,9 +71,9 @@
 \setcounter{page}{1}
 
 
-% Redefine section commands to use less space
+% Redefine subsection commands to use less space
 \makeatletter
-\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
                                 {-1ex plus -.5ex minus -.2ex}%
                                 {0.5ex plus .2ex}%x
                                 {\normalfont\large\bfseries}}
@@ -91,7 +91,7 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
-% Don't print section numbers
+% Don't print subsection numbers
 \setcounter{secnumdepth}{0}
 
 
@@ -116,8 +116,298 @@
 \setlength{\columnsep}{2pt}
 
 \begin{center}
-     \Large{\textbf{WuS - Cheat Sheet}} \\
+     \Large{\textbf{WuS - Cheatsheet}} \\
 \end{center}
+\section{Wahrscheinlichkeitsräume}
+\subsection{Grundraum}
+\blue{Terminologie:} Die Menge $\Omega$ nennen wir Grundraum. 
+\subsection{Ereignisse}
+Ein Element $\omega \in \Omega$ nennen wir Elementarereignis (oder Ausgang des Experiments).\\
+\blue{Definition 1.1:} Ein Mengensystem $\mathcal{F} \subset \mathcal{P}(\Omega)$ heisst Sigma-Algebra ( $\sigma$-Algebra), falls es die folgenden Eigenschaften erfüllt
+\begin{enumerate}
+    \item $\Omega \in \mathcal{F}$
+    \item $A \in \mathcal{F} \Rightarrow A^{c} \in \mathcal{F}$ 
+    \item $A_{1}, A_{2}, \ldots \in \mathcal{F} \Rightarrow \bigcup_{i=1}^{\infty} A_{i} \in \mathcal{F}$
+\end{enumerate}
+Dabei nennen wir die Elemente der $\sigma$-Algebra Ereignisse.\\
+\subsection{Wahrscheinlichkeitsmass}
+\blue{Definition 1.2:} Sei $\Omega$ ein Grundraum und sei $\mathcal{F}$ eine $\sigma$-Algebra. Eine Abbildung
+$$
+\begin{aligned}
+\mathbb{P}: \mathcal{F} & \rightarrow[0,1] \\
+A & \mapsto \mathbb{P}[A]
+\end{aligned}
+$$
+heisst Wahrscheinlichkeitsmass auf $(\Omega, \mathcal{F})$, falls folgende Eigenschaften gelten
+\begin{enumerate}
+    \item $\mathbb{P}[\Omega]=1$.
+    \item ( $\sigma$-Additivität) $\mathbb{P}[A]=\sum_{i=1}^{\infty} \mathbb{P}\left[A_{i}\right] \quad$ if $A=\bigcup_{i=1}^{\infty} A_{i}$ (disjunkte Vereinigung).
+\end{enumerate}
+\subsection{Der Wahrscheinlichkeitsraum} 
+\blue{Definition 1.3:} Sei $\Omega$ ein Grundraum, $\mathcal{F}$ eine $\sigma$-Algebra, und $\mathbb{P}$ ein Wahrscheinlichkeitsmass. Wir nennen das Tripel $(\Omega, \mathcal{F}, \mathbb{P})$ Wahrscheinlichkeitsraum.\\
+\textbf{Bemerkung 1.4:} Das Ereignis $A=\varnothing$ tritt niemals ein. Das Ereignis $A=\Omega$ tritt stets ein.\\
+\blue{Definition 1.5:} Sei $\Omega$ eine endlicher Grundraum. Das Laplace Modell auf $\Omega$ ist ein Tripel $(\Omega, \mathcal{F}, \mathbb{P})$, sodass
+\begin{enumerate}
+    \item $\mathcal{F}=\mathcal{P}(\Omega)$,
+    \item  $\mathbb{P}: \mathcal{F} \rightarrow[0,1]$ ist definiert durch
+    $$
+    \forall A \in \mathcal{F} \quad \mathbb{P}[A]=\frac{|A|}{|\Omega|} .
+    $$
+\end{enumerate}
+\subsection{Eigenschaften von Ereignissen}
+\yellow{Satz 1.6 (Abgeschlossenheit der $\sigma$-Algebra bzgl. Operationen):} Sei $\mathcal{F}$ eine $\sigma$-Algebra auf $\Omega$. Es gilt
+\begin{enumerate}
+    \item $\varnothing \in \mathcal{F}$,
+    \item $A_{1}, A_{2}, \ldots \in \mathcal{F} \Rightarrow \bigcap_{i=1}^{\infty} A_{i} \in \mathcal{F}$,
+    \item $A, B \in \mathcal{F} \Rightarrow A \cup B \in \mathcal{F}$,
+    \item $A, B \in \mathcal{F} \Rightarrow A \cap B \in \mathcal{F}$.
+\end{enumerate}
+\includegraphics[width = 0.3\textwidth]{prob_interpr_sets.png}
+\textbf{Beziehung/Interpretationen zwischen Ereignissen}
+\includegraphics[width = 0.3\textwidth]{prob_interpr_two_events.png}
+\subsection{Eigenschaften von Wahrscheinlichkeitsmassen}
+\yellow{Satz 1.7:} Sei $\mathbb{P}$ ein Wahrscheinlichkeitsmass auf $(\Omega, \mathcal{F})$. Es gilt:
+\begin{enumerate}
+    \item $\mathbb{P}[\varnothing]=0$
+    \item (Additivität) Sei $k \geq 1$, seien $A_{1}, \ldots, A_{k}$-viele paarweise disjunkte Ereignisse, dann gilt 
+    $$
+    \mathbb{P}\left[A_{1} \cup \cdots \cup A_{k}\right]=\mathbb{P}\left[A_{1}\right]+\cdots+\mathbb{P}\left[A_{k}\right]
+    $$
+    \item Sei $A$ ein Ereignis, dann gilt $\mathbb{P}\left[A^{c}\right]=1-\mathbb{P}[A]$
+    \item Falls $A$ und $B$ zwei (nicht notwendigerweise disjunkte) Ereignisse, dann gilt 
+    $$
+    \mathbb{P}[A \cup B]=\mathbb{P}[A]+\mathbb{P}[B]-\mathbb{P}[A \cap B]
+    $$
+\end{enumerate}
+\subsection{Nützliche Ungleichungen}
+\yellow{Satz $1.8$ (Monotonie):} Seien $A, B \in \mathcal{F}$, dann gilt $A \subset B \Rightarrow \mathbb{P}[A] \leq \mathbb{P}[B].$\\
+\yellow{Satz $1.9$ (Union Bound):} Sei $A_{1}, A_{2}, \ldots$ eine Folge von (nicht notwendigerweise disjunkten) Ereignissen, dann gilt die folgende Ungleichung
+$\mathbb{P}\left[\bigcup_{i=1}^{\infty} A_{i}\right] \leq \sum_{i=1}^{\infty} \mathbb{P}\left[A_{i}\right]$.\\
+\textbf{Bemerkung 1.10:} Die obrige Ungleichung gilt ebenfalls für eine Folge von endlich vielen nicht-leeren Ereignissen.
+\subsection{Stetigkeit von Wahrscheinlichkeitsmassen}
+\yellow{Satz 1.11:} Sei $\left(A_{n}\right)$ eine monoton wachsende Folge von Ereignissen $\left(\forall n: A_{n} \subset A_{n+1}\right).$ Dann gilt
+$$
+\lim _{n \rightarrow \infty} P\left[A_{n}\right]=\mathbb{P}\left[\bigcup^{\infty} A_{n}\right] . \quad \text { monoton wachsender Grenzwert }
+$$
+Sei $\left(B_{n}\right)$ eine monoton fallende Folge von Ereignissen $\forall n: \left(B_{n} \supset B_{n+1}\right).$ Dann gilt
+$$
+\lim _{n \rightarrow \infty} P\left[B_{n}\right]=\mathbb{P}\left[\bigcap_{n=1}^{\infty} B_{n}\right] . \quad \text { monoton fallender Grenzwert }
+$$.\\
+\textbf{Bemerkung 1.12:} Durch Monotonie erhalten wir $\mathbb{P}\left[A_{n}\right] \leq \mathbb{P}\left[A_{n+1}\right]$ und $\mathbb{P}\left[B_{n}\right] \geq \mathbb{P}\left[B_{n+1}\right]$ für jedes n. 
+Daher sind die Grenzwerte in den obrigen Gleichungen wohldefiniert.
+\subsection{Bedingte Wahrscheinlichkeit}
+\blue{Definition $1.13$ (Bedingte Wahrscheinlichkeit):} Sei $(\Omega, \mathcal{F}, \mathbb{P})$ ein Wahrscheinlichkeitsraum. Seien $A, B$ zwei Ereignisse mit $\mathbb{P}[B]>0$. Wir definieren die bedingte Wahrscheinlichkeit von $A$ gegeben $B$ wie folgt
+$$
+\mathbb{P}[A \mid B]=\frac{\mathbb{P}[A \cap B]}{\mathbb{P}[B]} .
+$$\\
+\textbf{Bemerkung 1.14:} $\mathbb{P}[B \mid B]=1$.\\
+\yellow{Satz 1.15:} Sei $(\Omega, \mathcal{F}, \mathbb{P})$ ein Wahrscheinlichkeitsraum. Sei $B$ ein Ereignis mit positiver Wahrscheinlichkeit. 
+Dann ist $\mathbb{P}[. \mid B]$ ein $W$-Mass auf $\Omega$.\\
+\yellow{Satz $1.16$ (Gesetz der totalen Wahrscheinlichkeit):} Sei $B_{1}, \cdots, B_{n}$ $\text{eine Partition}^{a}$ des Grundraums $\Omega$, so dass $\mathbb{P}\left[B_{i}\right]>0$ für jedes $1 \leq i \leq n$ gilt. Dann gilt
+$$
+\forall A \in \mathcal{F} \quad \mathbb{P}[A]=\sum_{i=1}^{n} \mathbb{P}\left[A \mid B_{i}\right] \mathbb{P}\left[B_{i}\right]
+$$
+$a_{\text{i.e. }} \Omega=B_{1} \cup \cdots \cup B_{n}$ mit paarweise disjunkten Ereignissen. \\
+\yellow{Satz $1.17$ (Satz von Bayes):} Sei $B_{1}, \ldots, B_{n} \in \mathcal{F}$ eine Partition von $\Omega$ sodass, $\mathbb{P}\left[B_{i}\right]>0$ für jedes $i$ gilt. Für jedes Ereignis $A$ mit $\mathbb{P}[A]>0$ gilt
+$$
+\forall i=1, \ldots, n \quad \mathbb{P}\left[B_{i} \mid A\right]=\frac{\mathbb{P}\left[A \mid B_{i}\right] \mathbb{P}\left[B_{i}\right]}{\sum_{j=1}^{n} \mathbb{P}\left[A \mid B_{j}\right] \mathbb{P}\left[B_{j}\right]}
+$$\\
+\subsection{Unabhängigkeit von Ereignissen}
+\blue{Definition 1.18 (Unabh{\"a}ngigkeit):} Sei $(\Omega, \mathcal{F}, \mathbb{P})$ ein Wahrscheinlichkeitsraum. Zwei Ereignisse $A$ und $B$ heissen unabhängig falls
+$\mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B].$\\
+\textbf{Bemerkung 1.19.} Falls $\mathbb{P}[A] \in\{0,1\}$, dann ist A unabhängig von jedem Ereignis sodass,
+$$
+\forall B \in \mathcal{F} \quad \mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B] .
+$$
+Falls ein Ereignis $A$ unabhängig von sich selbst ist, also $\left.\mathbb{P}[A \cap A]=\mathbb{P}[A]^{2}\right)$ gilt, dann muss $\mathbb{P}[A] \in\{0,1\}$ gelten.
+$A$ ist unabhängig von $B$ genau dann wenn $A$ unabhängig von $B^{c}$ ist.\\
+\yellow{Satz 1.20:} Seien $A, B \in \mathcal{F}$ zwei Ereignisse mit $\mathbb{P}[A], \mathbb{P}[B]>0$. Dann sind folgende Aussagen äquivalent:
+\begin{enumerate}
+    \item $\mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B]$, $A$ und $B$ sind unabhängig
+    \item $\mathbb{P}[A \mid B]=\mathbb{P}[A]$, Eintreten von $B$ hat keinen Einfluss auf $A$
+    \item $\mathbb{P}[B \mid A]=\mathbb{P}[B]$. Eintreten von $A$ hat keinen Einfluss auf $B$
+\end{enumerate}
+\blue{Definition 1.21:} Sei $I$ eine beliebe Indexmenge. Eine Familie von Ereignissen $\left(A_{i}\right)_{i \in I}$ heisst unabhängig falls
+$$
+\forall J \subset I \text { endlich } \mathbb{P}\left[\bigcap_{j \in J} A_{j}\right]=\prod_{j \in J} \mathbb{P}\left[A_{j}\right] \text {. }
+$$\\
+\textbf{Bemerkung:} Drei Ereignisse $A, B$ und $C$ sind unabhängig falls alle 4 folgenden Gleichungen erfüllt sind (nicht nur die Letzte!):
+$$
+\begin{aligned}
+\mathbb{P}[A \cap B] &=\mathbb{P}[A] \mathbb{P}[B], \\
+\mathbb{P}[A \cap C] &=\mathbb{P}[A] \mathbb{P}[C], \\
+\mathbb{P}[B \cap C] &=\mathbb{P}[B] \mathbb{P}[C], \\
+\mathbb{P}[A \cap B \cap C] &=\mathbb{P}[A] \mathbb{P}[B] \mathbb{P}[C]
+\end{aligned}
+$$\\
+\section{Zufallsvariablen und Verteilungsfunktionen}
+\subsection{Abstrakte Definition}
+\blue{Definition 2.1:} Sei $(\Omega, \mathcal{F}, \mathbb{P})$ ein Wahrscheinlichkeitsraum. Eine Zufallsvariable (Z.V.) ist eine Abbildung $X: \Omega \rightarrow \mathbb{R}$ sodass, für alle $a \in \mathbb{R}$ gilt,
+$$
+\{\omega \in \Omega: X(\omega) \leq a\} \in \mathcal{F} .
+$$\\
+\blue{Indikatorfunktion:} Sei $A \in \mathcal{F}$. Wir definieren die Indikatorfunktion $\mathbb{1}_{A}$ auf $A$, durch
+$$
+\forall \omega \in \Omega \quad \mathbb{1}_{A}(\omega)= \begin{cases}0 & \text { if } \omega \notin A, \\ 1 & \text { if } \omega \in A .\end{cases}
+$$.\\
+\textbf{Notation:} Für Ereignisse im Bezug auf Z.V. werden wir auf darauf verzichten sie mittels Beziehung zu $\omega$ darzustellen. Stattdessen schreiben wir für $a \leq b$
+$$
+\begin{aligned}
+&\{X \leq a\}=\{\omega \in \Omega: X(\omega) \leq a\} \\
+&\{a<X \leq b\}=\{\omega \in \Omega: a<X(\omega)<b\}, \\
+&\{X \in \mathbb{Z}\}=\{\omega \in \Omega: X(\omega) \in \mathbb{Z}\}
+\end{aligned}
+$$
+Betrachten wir die Wahrscheinlichkeit nach obigen Beispiel. Dann lassen wir gerade die Klammern weg und schreiben einfach
+$$
+\mathbb{P}[X \leq a]=\mathbb{P}[\{X \leq a\}]=\mathbb{P}[\{\omega \in \Omega: X(\omega) \leq a\}] .
+$$
+\subsection{Verteilungsfunktion}
+\blue{Definition 2.2:} Sei $X$ eine Zufallsvariable auf einem $W$-Raum $(\Omega, \mathcal{F}, \mathbb{P})$. Die Verteilungsfunktion von $X$ ist eine Funktion $F_{X}: \mathbb{R} \rightarrow[0,1]$, definiert durch
+$$
+\forall a \in \mathbb{R} \quad F_{X}(a)=\mathbb{P}[X \leq a] .
+$$\\
+\textbf{Example 2:} Indikatorfunktion eines Ereignisses
+Sei $A$ ein Ereignis. Sei $X=\mathbb{1}_{A}$ eine Indikatorfunktion auf einem Ereignis $A$. Dann gilt
+$$
+F_{X}(a)= \begin{cases}0 & \text { falls } a<0, \\ 1-\mathbb{P}[A] & \text { falls } 0 \leq a<1 \\ 1 & \text { falls } a \geq 1\end{cases}
+$$\\
+\yellow{Satz $2.3$ (Einfache Identit{\"a}t):} Seien $a<b$ zwei reelle Zahlen. Dann gilt $\mathbb{P}[a<X \leq b]=F(b)-F(a).$\\
+\green{Theorem $2.4$ (Eigenschaften der Verteilungsfunktion): } Sei $X$ eine Z.V. auf einem Wahrscheinlichkeitsraum $(\Omega, \mathcal{F}, \mathbb{P})$. Die Verteilungsfunktion $F=F_{X}: \mathbb{R} \rightarrow[0,1]$ von $X$ erfüllt folgende Eigenschaften:
+\begin{enumerate}
+    \item $F$ ist monoton wachsend
+    \item $F$ ist rechtsstetig ${ }^{a}$
+    \item $\lim _{a \rightarrow-\infty} F(a)=0$ und $\lim _{a \rightarrow \infty} F(a)=1$.
+\end{enumerate} 
+${ }^{a}$ Formal: $F(a)=\lim _{h \downarrow 0} F(a+h)$ für jedes $a \in \mathbb{R}$.
+\subsection{Unabhängigkeit von Zufallsvariablen}
+\blue{Definition 2.5:} Seien $X_{1}, \ldots, X_{n}$ Zufallsvariablen auf einem $W$-Raum $(\Omega, \mathcal{F}, \mathbb{P})$. Dann heissen $X_{1}, \ldots, X_{n}$ unabhängig falls
+$\forall x_{1}, x_{2}, \ldots, x_{n} \in \mathbb{R} \quad \mathbb{P}\left[X_{1} \leq x_{1}, \ldots, X_{n} \leq x_{n}\right]
+=\mathbb{P}\left[X_{1} \leq x_{1}\right] \ldots \mathbb{P}\left[X_{n} \leq x_{n}\right]
+$\\
+\textbf{Bemerkung 2.6:} Man kann zeigen, dass $X_{1}, \ldots, X_{n}$ genau dann unabhängig sind, wenn folgende Bedingung gilt
+$
+\forall I_{1} \subset \mathbb{R}, \ldots, I_{n} \subset \mathbb{R} \text { Intervalle }\left\{X_{1} \in I_{1}\right\}, \ldots,\left\{X_{n} \in I_{n}\right\} \text { sind unabhängig . }
+$\\
+\subsection{Gruppierung von Zufallsvariablen}
+\yellow{Satz 2.7 (Gruppieren von Zufallsvariablen):} Seien $X_{1}, \ldots, X_{n} n$ unabhängige Zufallsvariablen. Seien $1 \leq i_{1}<i_{2}<\cdots<i_{k} \leq n$ Indexes und $\phi_{1}, \ldots, \phi_{k}$ Abbildungen. Dann sind
+$
+Y_{1}=\phi_{1}\left(X_{1}, \ldots, X_{i_{1}}\right), Y_{2}=\phi_{2}\left(X_{i_{1}+1}, \ldots, X_{i_{2}}\right) \ldots, Y_{k}=\phi_{k}\left(X_{i_{k-1}+1}, \ldots, X_{i_{k}}\right)
+$
+unabhängig.
+\subsection{Folgen von u.i.v. Zufallsvariablen}
+\blue{Definition 2.8:} Eine Folge von Zufallsvariablen $X_{1}, X_{2}, \ldots$ heißt
+\begin{enumerate}
+    \item unabhängig falls $X_{1}, \ldots, X_{n}$ unabhängig sind, für alle $n \in \mathbb{N}$.
+    \item unabhängig und identisch verteilt (uiv) falls sie unabhängig ist und die Zufallsvariablen dieselbe Verteilungsfunktion haben d.h.
+    $\forall i, j \quad F_{X_{i}}=F_{X_{j}}.$
+\end{enumerate}
+\subsection{Transformation von Zufallsvariablen}
+Falls $X$ eine Zufallsvariable ist, und $\phi: \mathbb{R} \rightarrow \mathbb{R}$, so schreiben wir
+$\phi(X):=\phi \circ X .$
+Somit ist $\phi(X)$ eine neue Abbildung von $\Omega \rightarrow \mathbb{R}$, welche in dem nachfolgenden Diagram dargestellt ist:
+$\begin{aligned}
+    &\Omega \stackrel{X}{\longrightarrow} \mathbb{R} \stackrel{\phi}{\longrightarrow} \quad \mathbb{R}\\
+    &\omega \longmapsto X(\omega) \longmapsto \phi(X(\omega)) \text {. }
+\end{aligned}$
+\subsection{Konstruktion von Zufallsvariablen}
+\blue{Definition 2.9:} Sei $p \in[0,1]$. Eine Zufallsvariable $X$ heißt Bernoulli Zufallsvariable mit Parameter $p$ falls
+$$
+\mathbb{P}[X=0]=1-p \quad \text { und } \quad \mathbb{P}[X=1]=p .
+$$
+Dabei schreiben wir stets $X \sim \operatorname{Ber}(p)$.\\
+\green{Theorem $2.10$ (Existenzsatz von Kolmogorov).} Es existiert ein $W$-Raum $(\Omega, \mathcal{F}, \mathbb{P})$ und eine nicht endliche u.i.v. Folge von Bernoulli 
+Zufallsvariablen $X_{1}, X_{2}, \ldots$ auf $(\Omega, \mathcal{F}, \mathbb{P})$ mit Parameter $\frac{1}{2}$.\\
+\blue{Definition 2.11:} Eine Zufallsvariable $U$ heißt gleichverteilt auf $[0,1]$ falls ihre Verteilungsfunktion gegeben ist durch
+$F_{U}(x)= \begin{cases}0 & x<0 \\ x & 0 \leq x \leq 1 \\ 1 & x>1\end{cases}$\\
+Wir schreiben gerade $U \sim \mathcal{U}([0,1])$.\\
+\yellow{Satz 2.12} Seien $X_{1}, X_{2}, \ldots$ eine Folge von unabhängigen Bernoulli-Zufallsvariablen mit Parameter $1 / 2$. Für jedes festes $\omega$ haben wir $X_{1}(\omega), X_{2}(\omega) \cdots \in\{0,1\}$. Daraus folgt, dass die unendliche Reihe
+$$
+Y(\omega)=\sum_{n=1}^{\infty} 2^{-n} X_{n}(\omega)
+$$
+absolut konvergiert, wobei $Y(\omega) \in[0,1]$ ist. Die Abbildung $Y: \Omega \rightarrow[0,1]$ ist eine gleichverteilte Zufallsvariable auf $[0,1]$.\\
+\blue{Definition $2.13$ (Pseudoinverse):} Die Pseudoinverse von $F$ ist eine Abbildung $F^{-1}$ : $(0,1) \rightarrow \mathbb{R}$ definiert durch
+$$
+\forall \alpha \in(0,1) \quad F^{-1}(\alpha)=\inf \{x \in \mathbb{R}: F(x) \geq \alpha\} .
+$$\\
+\green{Theorem $2.14$ (Inversionsmethode):} Sei $F: \mathbb{R} \rightarrow[0,1]$ eine Abbildung, welche Eigenschaften (i)-(iii) erfüllt. Sei $U$ eine Gleichverteilte Zufallsvariable. Dann besitzt die Zufallsvariable
+$$
+X=F^{-1}(U)
+$$
+gerade die Verteilungsfunktion $F_{X}=F$. \\
+\textbf{Bemerkung 2.15:} Wir wollen nochmals kurz erläutern, warum die Definition von $X$ nach 2.14 wohldefiniert ist. Sei $U: \Omega \rightarrow[0,1]$ und $F^{-1}:(0,1) \rightarrow \mathbb{R}$ analog zum obigen Theorem definiert. Dann gilt stets $P[U \in(0,1)=1]$. Strenggenommen ist $X$ bis jetzt nur auf einer Menge mit Wahrscheinlichkeit 1 aber nicht auf ganz $\Omega$ definiert. Wir beheben das Problem mittels folgender Definition
+$$
+X(\omega)= \begin{cases}F^{-1}(U(\omega)) & \text { falls } U(\omega) \in(0,1) \\ 0 & \text { sonst. }\end{cases}
+$$\\
+\green{Theorem 2.16:} Seien $F_{1}, F_{2} \ldots$ eine Folge von Funktionen $\mathbb{R}$ auf $[0,1]$, die die Eigenschaften $(i)-($ iii $)$ am Anfang des Abschnitts erfüllen. 
+Dann existiert ein Wahrscheinlichkeitsraum $(\Omega, \mathcal{F}, \mathbb{P})$ und eine Folge von unabhängigen Zufallsvariablen $X_{1}, X_{2}, \ldots$ auf diesem Wahrscheinlichkeitsraum, sodass
+\begin{enumerate}
+    \item für jedes $i$ gilt: $X_{i}$ hat Verteilungsfunktion $F_{i}$ (d.h. $\forall x \mathbb{P}\left[X_{i} \leq x\right]=F_{i}(x)$ ), und
+    \item $X_{1}, X_{2}, \ldots$ sind unabhängig.
+\end{enumerate}
+\section{Diskrete und stetige Zufallsvariablen}
+\subsection{Unstetigkeit/Stetigkeit der Verteilungsfunktion $F$}
+\yellow{Satz 3.1 (Wahrscheinlichkeit eines Punktes):} Sei $X: \Omega \rightarrow \mathbb{R}$ eine Zufallsvariable mit Verteilungsfunktion $F$. Für jedes a in $\mathbb{R}$ gilt
+$\mathbb{P}[X=a]=F(a)-F(a-)$. Sei $a \in \mathbb{R}$ fixiert.
+\begin{enumerate}
+    \item Wenn $F$ in einem Punkt $a \in \mathbb{R}$ nicht stetig ist, dann ist die ``Sprunghöhe'' $F(a)-F(a-)$ gleich der Wahrscheinlichkeit, dass $X=a$.
+    \item Falls $F$ stetig in einem Punkt $a \in \mathbb{R}$ ist, dann gilt $\mathbb{P}[X=a]=0 .$
+\end{enumerate}
+\subsection{Fast sichere Ereignisse}
+\blue{Definition 3.2:} Sei $A \in \mathcal{F}$ ein Ereignis. Wir sagen $A$ tritt fast sicher (f.s.) ein, falls
+$\mathbb{P}[A]=1.$\\
+\textbf{Bemerkung 3.3:} Wir erweitern gerade diese Notation auf allgemeinere Mengen $A \subset \Omega$ (nicht zwangsweise ein Ereignis): 
+Wir sagen dann, dass A fast sicher eintritt, falls ein Ereignis $A^{\prime} \in \mathcal{F}$ existiert, sodass $A^{\prime} \subset A$ 
+und $\mathbb{P}\left[A^{\prime}\right]=1$.
+\subsection{Diskrete Zufallsvariablen}
+\blue{Definition $3.4$ (Diskrete Zufallsvariable):} Eine Zufallsvariable $X: \Omega \rightarrow \mathbb{R}$ heisst diskret falls eine endliche oder abzählbare Menge $W \subset \mathbb{R}$ existiert, sodass
+$\mathbb{P}[X \in W]=1.$ ``Die Werte von $X$ liegen in $W$ fast sicher.'' \\
+\textbf{Bemerkung 3.5:} Wenn der Grundraum $\Omega$ endlich oder abzählbar ist, dann ist jede $Z u$ fallsvariable $X: \Omega \rightarrow \mathbb{R}$ diskret. 
+In der Tat ist das Bild $X(\Omega)=\{x \in \mathbb{R}: \exists \omega \in \Omega X(\omega)=x\}$ endlich oder abzählbar und wir haben $\mathbb{P}[X \in W]=1$, mit $W=X(\Omega)$. \\
+\blue{Definition 3.6:} Sei $X$ eine diskrete Zufallsvariable mit Werten in einer endlichen oder abzählbaren Menge $W \subset \mathbb{R}$. Die Zahlenfolge $(p(x))_{x \in W}$ definiert durch
+$$
+\forall x \in W \quad p(x):=\mathbb{P}[X=x]
+$$
+heisst Verteilung von $X$. \\
+\yellow{Satz 3.7:} Die Verteilung $(p(x))_{x \in W}$ einer diskreten Zufallsvariablen erfüllt
+$\sum_{x \in W} p(x)=1 .$\\
+\textbf{Bemerkung 3.8:} Umgekehrt, wenn wir eine Folge von Zahlen $(p(x))_{x \in W}$ mit Werten in $[0,1]$ gegeben haben, sodass
+$\sum_{x \in W} p(x)=1,$
+dann gibt es einen Wahrscheinlichkeitsraum $(\Omega, \mathcal{F}, \mathbb{P})$ und eine Zufallsvariable $X$ mit zugehöriger Verteilung $(p(x))_{x \in W}$. Dies gilt nach dem Existenzsatz 2.16 in Kapitel 2. Diese Beobachtung ist in der Praxis wichtig, denn sie erlaubt uns zu schreiben:
+``Sei $X$ eine diskrete Zufallsvariable mit Verteilung $(p(x))_{x \in W}$.''
+\subsection{Verteilung $p$ vs. Verteilungsfunktion $F_X$}
+\yellow{Satz 3.9:} Sei $X$ eine diskrete Zufallsvariable, dessen Werte in einer endlichen oder abzählbaren Menge $W$ liegen, und deren Verteilung $p$ ist. Dann ist die Verteilungsfunktion von $X$ gegeben durch
+$$
+\forall x \in \mathbb{R} \quad F_{X}(x)=\sum_{\substack{y \leq x \\ y \in W}} p(y)
+$$\\
+\subsection{Beispiele diskreter Zufallsvariablen}
+\blue{Definition $3.10$ (Bernoulli Verteilung):} Es sei $0 \leq p \leq 1$. Eine Zufallsvariable $X$ heisst Bernoulli Zufallsvariable mit Parameter $p$, wenn sie Werte in $W=\{0,1\}$ annimmt und folgendes gilt
+$$
+\mathbb{P}[X=0]=1-p \quad \text { und } \quad \mathbb{P}[X=1]=p .
+$$
+In diesem Fall schreiben wir $X \sim \operatorname{Ber}(p)$. \\
+\blue{Definition $3.11$ (Binomialverteilung):} Sei $0 \leq p \leq 1$, sei $n \in \mathbb{N}$. Eine Zufallsvariable $X$ heisst binomiale Zufallsvariable mit Parametern $n$ und p, wenn sie Werte in $W=\{0, \ldots, n\}$ annimmt und folgendes gilt
+$$
+\forall k \in\{0, \ldots, n\} \quad \mathbb{P}[X=k]=\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) p^{k}(1-p)^{n-k} .
+$$
+Wir schreiben dann $X \sim \operatorname{Bin}(n, p)$. \\
+\textbf{Bemerkung 3.12:} Wenn wir $p(k)=\left(\begin{array}{l}n \\ k\end{array}\right) p^{k}(1-p)^{n-k}$ definieren, haben wir
+$$
+\sum_{k=0}^{n} p(k)=\sum_{k=0}^{n}\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) p^{k}(1-p)^{n-k}=(p+1-p)^{n}=1
+$$\\
+\textbf{Symmetrie der Binomialkoeffizienten:} $\left(\begin{array}{l}n \\ k\end{array}\right)=\left(\begin{array}{c}n \\ n-k\end{array}\right)$ \\
+\yellow{Satz $3.13$ (Summe von unabh{\"a}ngigen Bernoulli und Binomial Z.V.):} Sei $0 \leq p \leq 1$, sei $n \in \mathbb{N}$. Seien $X_{1}, \ldots, X_{n}$ unabhängige Bernoulli $Z$.V. mit Parameter $p$. Dann ist
+$$
+S_{n}:=X_{1}+\cdots+X_{n}
+$$
+eine binomialverteilte Z.V. mit Parametern $n$ und $p$. \\
+\textbf{Bemerkung 3.14:} Insbesondere ist die Verteilung $\operatorname{Bin}(1, p)$ gerade $\operatorname{Ber}(p)$ verteilt. Es sei noch folgendes anzumerken: Falls $X \sim \operatorname{Bin}(m, p), Y \sim \operatorname{Bin}(n, p)$ und $X, Y$ unabhängig sind, dann ist $X+Y \sim \operatorname{Bin}(m+n, p)$ verteilt. \\
 
 \newpage
 \end{multicols}
