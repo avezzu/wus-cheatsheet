@@ -381,11 +381,13 @@ $$
 \forall x \in \mathbb{R} \quad F_{X}(x)=\sum_{\substack{y \leq x \\ y \in W}} p(y)
 $$\\
 \subsection{Beispiele diskreter Zufallsvariablen}
+\subsubsection{Bernoulli Verteilung}
 \blue{Definition $3.10$ (Bernoulli Verteilung):} Es sei $0 \leq p \leq 1$. Eine Zufallsvariable $X$ heisst Bernoulli Zufallsvariable mit Parameter $p$, wenn sie Werte in $W=\{0,1\}$ annimmt und folgendes gilt
 $$
 \mathbb{P}[X=0]=1-p \quad \text { und } \quad \mathbb{P}[X=1]=p .
 $$
 In diesem Fall schreiben wir $X \sim \operatorname{Ber}(p)$. \\
+\subsubsection{Binomialverteilung}
 \blue{Definition $3.11$ (Binomialverteilung):} Sei $0 \leq p \leq 1$, sei $n \in \mathbb{N}$. Eine Zufallsvariable $X$ heisst binomiale Zufallsvariable mit Parametern $n$ und p, wenn sie Werte in $W=\{0, \ldots, n\}$ annimmt und folgendes gilt
 $$
 \forall k \in\{0, \ldots, n\} \quad \mathbb{P}[X=k]=\left(\begin{array}{l}
@@ -408,6 +410,136 @@ S_{n}:=X_{1}+\cdots+X_{n}
 $$
 eine binomialverteilte Z.V. mit Parametern $n$ und $p$. \\
 \textbf{Bemerkung 3.14:} Insbesondere ist die Verteilung $\operatorname{Bin}(1, p)$ gerade $\operatorname{Ber}(p)$ verteilt. Es sei noch folgendes anzumerken: Falls $X \sim \operatorname{Bin}(m, p), Y \sim \operatorname{Bin}(n, p)$ und $X, Y$ unabhängig sind, dann ist $X+Y \sim \operatorname{Bin}(m+n, p)$ verteilt. \\
+\subsubsection{Geometrische Verteilung}
+\blue{Definition $3.15$ (Geometrische Verteilung):} Es sei $0<p \leq 1$. Eine Zufallsvariable $X$ heisst geometrische Zufallsvariable mit Parameter $p$, falls sie Werte in $W=$ $\mathbb{N} \backslash\{0\}$ annimmt und folgendes gilt
+$$
+\forall k \in \mathbb{N} \backslash\{0\} \quad \mathbb{P}[X=k]=(1-p)^{k-1} \cdot p \text {. }
+$$
+Wir schreiben dann $X \sim \operatorname{Geom}(p)$.\\
+\textbf{Bemerkung 3.16:} Für $p=1$ und $k=1$ erscheint in der obigen Gleichung ein Term $0^{0}$, wir verwenden die Konvention $0^{0}=1$ und damit gilt $\mathbb{P}[X=1]=p$. \\
+\textbf{Bemerkung 3.17:} Falls wir $p(k)=(1-p)^{k-1} p$ definieren, haben wir
+$\sum_{k=1}^{\infty} p(k)=p \sum_{k=1}^{\infty}(1-p)^{k-1}=p \cdot \frac{1}{p}=1$.\\
+\yellow{Satz 3.18:} Sei $X_{1}, X_{2}, \ldots$ eine Folge von unendlich vielen unabhängigen BernoulliZ.V. mit Parameter $p$. Dann ist
+$T:=\min \left\{n \geq 1: X_{n}=1\right\}$
+eine geometrisch verteilte Zufallsvariable mit Parameter $p$. \\
+\textbf{Bemerkung 3.19:} Falls wir sagen, dass $T$ eine geometrische Zufallsvariable ist, müssen wir folgendes präzisieren: Tatsächlich kann die Zufallsvariable $T$ den 
+Wert $+\infty$ annehmen, wenn alle Zufallsvariablen $X_{i}$ gleich 0 sind. Dies ist jedoch kein Problem für den Bewei des Satzes. Man kann leicht überprüfen, 
+dass $\mathbb{P}[T=\infty]=0$ gilt.\\
+\yellow{Satz 3.20 (Ged{\"a}chnislosigkeit der Geometrischen Verteilung):} Sei $T \sim \operatorname{Geom}(p)$ für $0<$ $p<1$. Dann gilt
+$\forall n \geq 0 \quad \forall k \geq 1 \quad \mathbb{P}[T \geq n+k \mid T>n]=\mathbb{P}[T \geq k]$.\\
+\subsubsection{Poisson Verteilung}
+\blue{Definition 3.21:} Sei $\lambda>0$ eine positive reelle Zahl. Eine Zufallsvariable $X$ heisst Poisson-Zufallsvariable mit Parameter $\lambda$, wenn sie Werte in $W=\mathbb{N}$ annimmt und folgendes gilt
+$$
+\forall k \in \mathbb{N} \quad \mathbb{P}[X=k]=\frac{\lambda^{k}}{k !} e^{-\lambda} \text {. }
+$$
+Wir schreiben dann $X \sim \operatorname{Poisson}(\lambda)$.\\
+\textbf{Bemerkung 3.22:} Alternativ definieren wir $p(k)=\frac{\lambda^{k}}{k !} e^{-\lambda}$, haben wir
+$\sum_{k=0}^{\infty} p(k)=e^{-\lambda} \sum_{k=0}^{\infty} \frac{\lambda^{k}}{k !}=e^{-\lambda} \cdot e^{\lambda}=1,$\\
+\yellow{Satz $3.23$ (Poisson-Approximation der Binomialverteilung):} Sei $\lambda>0$. Für jedes $n \geq 1$ seien $X_{n} \sim \operatorname{Bin}\left(n, \frac{\lambda}{n}\right)$ Zufallsvariablen. Dann gilt
+$$
+\forall k \in \mathbb{N} \quad \lim _{n \rightarrow \infty} \mathbb{P}\left[X_{n}=k\right]=\mathbb{P}[N=k],
+$$
+wobei $N$ eine Poisson Zufallsvariable mit Parameter $\lambda$.
+\subsection{Stetige Verteilungen}
+\blue{Definition $3.25$ (Stetig verteilte Zufallsvariablen):} Eine Zufallsvariable $X: \Omega \rightarrow \mathbb{R}$ heisst stetig, wenn ihre Verteilungsfunktion $F_{X}$ wie folgt geschrieben werden kann
+$$
+F_{X}(a)=\int_{-\infty}^{a} f(x) d x \text { für alle a in } \mathbb{R} .
+$$
+wobei $f: \mathbb{R} \rightarrow \mathbb{R}_{+}$eine nicht-negative Funktion ist. Wir nennen dann $f$ Dichte von $X$.\\
+\textbf{Intuition:} $f(x) d x$ ist die Wahrscheinlichkeit, dass $X$ Werte in $[x, x+d x]$ annimmt.\\
+\green{Theorem 3.26:} Sei $X$ eine Zufallsvariable. Die Verteilungsfunktion $F_{X}$ sei stetig und stückweise $\mathcal{C}^{1}$, 
+d.h. es gibt $x_{0}=-\infty<x_{1}<\cdots<x_{n-1}<x_{n}=+\infty$, sodass $F_{X}$ auf jedem
+Intervall $\left(x_{i}, x_{i+1}\right)$ Element von $\mathcal{C}^{1}$ ist. Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann konstruiert werden, indem man folgendes festlegt
+$\forall x \in\left(x_{i}, x_{i+1}\right) \quad f(x)=F_{X}^{\prime}(x)$
+mit beliebigen Werten in $x_{1}, \ldots, x_{n-1}$.\\
+\subsection{Beispiele stetiger Zufallsvariablen}
+\subsubsection{Gleichverteilung}
+\blue{Definition $3.27$ (Gleichverteilung auf $[a, b], a<b$.):} Eine stetige Zufallsvariable $X$ heisst gleichverteilt auf $[a, b]$ falls ihre Dichte gegeben ist durch
+$$
+f_{a, b}(x)= \begin{cases}\frac{1}{b-a} & x \in[a, b], \\ 0 & x \notin[a, b]\end{cases}
+$$
+Wir schreiben dann stets $X \sim \mathcal{U}([a, b])$.\\
+\textbf{Eigenschaften einer gleichverteilten Zufallsvariable $X$ auf $[a, b]$:}
+\begin{enumerate}
+    \item Die Wahrscheinlichkeit in ein Intervall $[c, c+\ell] \subset[a, b]$ zu fallen ist lediglich abhängig von dessen Länge $\ell$ :
+    $\mathbb{P}[X \in[c, c+\ell]]=\frac{\ell}{b-a} .$
+    \item Die Verteilungsfunktion $X$ ist gegeben durch
+    $F_{X}(x)= \begin{cases}0 & x<a, \\ \frac{x-a}{b-a} & a \leq x \leq b, \\ 1 & x>b .\end{cases}$
+\end{enumerate}
+\subsubsection{Exponentialverteilung}
+\blue{Definition 3.28 (Exponentialverteilung mit Parameter $\lambda>0$ ):} Eine stetige Zufallsvariable $T$ heisst exponentialverteilt mit Parameter $\lambda>0$ falls ihre Dichte gegeben ist durch
+$$
+f_{\lambda}(x)= \begin{cases}\lambda e^{-\lambda x} & x \geq 0 \\ 0 & x<0\end{cases}
+$$
+Wir schreiben dann stets $T \sim \exp (\lambda)$.\\
+\textbf{Eigenschaften einer exponentialverteilten Zufallsvariable $T$ mit Parameter $\lambda$:}
+\begin{enumerate}
+    \item  Die Wahrscheinlichkeit des Wartens ist exponentiell klein:
+    $\forall t \geq 0 \quad \mathbb{P}[T>t]=e^{-\lambda t} .$
+    \item $T$ besitzt die Eigenschaft der Gedächnislosigkeit
+    $\forall t, s \geq 0 \quad \mathbb{P}[T>t+s \mid T>t]=[T>s] .$
+\end{enumerate}
+\subsubsection{Normalverteilung}
+\blue{Definition 3.29:} Eine stetige Zufallsvariable $X$ heisst normal verteilt mit Parametern $m$ und $\sigma^{2}>0$ falls ihre Dichte gegeben ist durch
+$$
+f_{m, \sigma}(x)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} e^{-\frac{(x-m)^{2}}{2 \sigma^{2}}}
+$$
+Wir schreiben dann stets $X \sim \mathcal{N}\left(m, \sigma^{2}\right)$.\\
+\textbf{Eigenschaften der Normalverteilung:}
+\begin{enumerate}
+    \item Seien $X_{1}, \ldots, X_{n}$ unabhängige normalverteilte Zufallsvariablen mit Parametern $\left(m_{1}, \sigma_{1}^{2}\right), \ldots,\left(m_{n}, \sigma_{n}^{2}\right)$, dann ist
+    $Z=m_{0}+\lambda_{1} X_{1}+\ldots+\lambda_{n} X_{n}$
+    eine normalverteilte Zufallsvariable mit Parametern $m=m_{0}+\lambda_{1} m_{1}+\cdots+\lambda_{n} m_{n}$ und $\sigma^{2}=\lambda_{1}^{2} \sigma_{1}^{2}+\cdots+\lambda_{n}^{2} \sigma_{n}^{2}$
+    \item Wir sprechen im Fall von $X \sim \mathcal{N}(0,1)$, gerade von einer standardnormalverteilten Zufallsvariable. Man merke sich dann folgende Beziehung
+    $Z=m+\sigma \cdot X$
+    wobei $X$ eine normalverteilte Zufallsvariable mit Parametern $m$ und $\sigma^{2}$ ist.
+    \item Falls $X$ normalverteilt mit Parametern $m$ und $\sigma^{2}$ ist, dann liegt die ``meiste'' Wahrscheinlichkeitsmasse der Z.V. im Intervall $[m-3 \sigma, m+3 \sigma]$. Präzise gilt gerade
+    $\mathbb{P}[|X-m| \geq 3 \sigma] \leq 0.0027$
+\end{enumerate}
+\section{Der Erwartungswert}
+\subsection{Der allgemeine Erwartungswert}
+\blue{Definition 4.1:} Sei $X: \Omega \rightarrow \mathbb{R}_{+}$eine Zufallsvariable mit nicht-negativen Werten. Dann heisst
+$$
+\mathbb{E}[X]=\int_{0}^{\infty}\left(1-F_{X}(x)\right) d x
+$$
+der Erwartungswert von $X$.\\
+\textbf{Bemerkung 4.2:} Der Erwartungswert kann sowohl endliche also auch nicht endliche Werte annehmen.\\
+\yellow{Satz 4.3:} Sei $X$ eine nicht-negative Zufallsvariable. Dann gilt
+$\mathbb{E}[X] \geq 0 .$
+Gleichheit gilt genau dann wenn $X=0$ fast sicher hält.\\
+\blue{Definition 4.4:} Sei $X$ eine Zufallsvariable. Falls $\mathbb{E}[|X|]<\infty$, dann heisst\\
+$X_{+}(\omega)=\left\{\begin{array}{ll}X(\omega) & \text { falls } X(\omega) \geq 0, \\ 0 & \text { falls } X(\omega)<0,\end{array} \quad\right.$ und 
+$\quad X_{-}(\omega)= \begin{cases}-X(\omega) & \text { falls } X(\omega) \leq 0, \\ 0 & \text { falls } X(\omega)>0 .\end{cases}$\\
+$
+\mathbb{E}[X]=\mathbb{E}\left[X_{+}\right]-\mathbb{E}\left[X_{-}\right] .$
+Erwartungswert von $X$.\\
+\subsection{Erwartungswert einer diskreten Zufallsvariable}
+\yellow{Satz 4.6:} Sei $X: \Omega \rightarrow \mathbb{R}$ eine diskrete Zufallsvariable dessen Werte in $W$ (endlich oder abzählbar) fast sicher liegen. Sei $\phi: \mathbb{R} \rightarrow \mathbb{R}$ eine Abbildung. Dann gilt
+$$
+\mathbb{E}[\phi(X)]=\sum_{x \in W} \phi(x) \cdot \mathbb{P}[X=x],
+$$
+solange der Erwartungswert wohldefiniert ist.\\
+\subsubsection{Bernoulli Zufallsvariable}
+Sei $X$ eine Bernoulli Zufallsvariable mit Parameter $p$. Dann gilt
+$\mathbb{E}[X]=p$.
+\subsubsection{Binomial Zufallsvariable}
+Sei $X \sim \operatorname{Bin}(n, p)$, dann gilt $\mathbb{E}[X] = np$
+\subsubsection{Poisson Zufallsvariable}
+Sei $X$ Poisson-verteilt mit Parameter $\lambda>0$, dann gilt
+$\mathbb{E}[X]=\lambda .$
+\subsubsection{Indikator Zufallsvariable}
+Sei $A \in \mathcal{F}$ ein Ereignis. Sei $\mathbb{1}_{A}$ die Indikator Funktion auf $A$, dann gilt $\mathbb{E}[\mathbb{1}_{A}]= \mathbb{P}[A] .$
+\subsubsection{geometrische Zufallsvariable}
+Sei $X \sim \operatorname{Geom}(p)$, dann gilt $\mathbb{E}[X] = \frac{1}{p}$
+\subsection{Erwartungswert stetiger Zufallsvariablen}
+\yellow{Satz 4.8:} Sei $X$ eine stetige Zufallsvariable mit Dichte $f$. Dann gilt
+$$\mathbb{E}[X]=\int_{-\infty}^{\infty} x \cdot f(x) d x,$$
+solange das Integral wohldefiniert ist.\\
+\green{Theorem 4.9:} Sei $X$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \mathbb{R} \rightarrow \mathbb{R}$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
+$$E[\phi(X)]=\int_{-\infty}^{\infty} \phi(x) f(x) d x$$
+solange das Integral wohldefiniert ist.\\
+
+Füge hier noch alle Beispiele ein.
 
 \newpage
 \end{multicols}
