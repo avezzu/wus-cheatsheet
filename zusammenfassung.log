@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  30 MAY 2022 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  2 JUN 2022 13:19
 entering extended mode
 **"c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex"
 (c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex
@@ -752,12 +752,12 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 1
  (C:\Users\aless\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<prob_interpr_sets.png, id=178, 470.25688pt x 254.9525pt>
+<prob_interpr_sets.png, id=214, 470.25688pt x 254.9525pt>
 File: prob_interpr_sets.png Graphic file (type png)
 <use prob_interpr_sets.png>
 Package pdftex.def Info: prob_interpr_sets.png  used on input line 165.
 (pdftex.def)             Requested size: 216.8122pt x 117.5441pt.
-<prob_interpr_two_events.png, id=180, 465.74pt x 214.30063pt>
+<prob_interpr_two_events.png, id=216, 465.74pt x 214.30063pt>
 File: prob_interpr_two_events.png Graphic file (type png)
 <use prob_interpr_two_events.png>
 Package pdftex.def Info: prob_interpr_two_events.png  used on input line 167.
@@ -805,20 +805,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [3] [4] (c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.aux)
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 285096039170520BB5C8F6D9C7B41B7C;8513.
+(rerunfilecheck)             Checksum: A8B85B9937B31A3369E8B4C7F37C5D59;10187.
  ) 
 Here is how much of TeX's memory you used:
- 24073 strings out of 479334
- 424591 string characters out of 2857085
- 795226 words of memory out of 3000000
- 40969 multiletter control sequences out of 15000+200000
+ 24099 strings out of 479334
+ 424863 string characters out of 2857085
+ 795230 words of memory out of 3000000
+ 40978 multiletter control sequences out of 15000+200000
  436972 words of font info for 120 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,89p,601b,636s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (4 pages, 290102 bytes).
+Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (4 pages, 300793 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
- 367 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -538,8 +538,57 @@ solange das Integral wohldefiniert ist.\\
 \green{Theorem 4.9:} Sei $X$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \mathbb{R} \rightarrow \mathbb{R}$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
 $$E[\phi(X)]=\int_{-\infty}^{\infty} \phi(x) f(x) d x$$
 solange das Integral wohldefiniert ist.\\
-
-Füge hier noch alle Beispiele ein.
+\subsubsection{Exponential Zufallsvariable}
+Sei $X \sim \exp (\lambda)$. Dann gilt $\mathbb{E}[X] = \frac{1}{\lambda}$.
+\subsubsection{gleichverteilte Zufallsvariable}
+Sei $X \sim \mathcal{U}([a, b])$. Dann gilt $\mathbb{E}[X] = \frac{a + b}{2}$.
+\subsubsection{gleichverteilte Zufallsvariable}
+Sei $X \sim \mathcal{U}([a, b])$. Dann gilt $\mathbb{E}[X] = \frac{a + b}{2}$.
+\subsubsection{Normalverteilung}
+Sei $X \sim \mathcal{N}\left(\mu , \sigma^{2}\right)$. Dann gilt $\mathbb{E}[X] = \mu$.
+\subsection{ Rechnen mit Zufallsvariable}
+\green{Theorem $4.10$ (Linearit{\"a}t des Erwartungswert):} Seien $X, Y: \Omega \rightarrow \mathbb{R}$ Zufallsvariablen, sei $\lambda \in \mathbb{R}$. 
+Falls die Erwartungswerte wohldefiniert sind gilt
+\begin{enumerate}
+    \item $\mathbb{E}[\lambda \cdot X]=\lambda \cdot \mathbb{E}[X]$
+    \item $\mathbb{E}[X+Y]=\mathbb{E}[X]+\mathbb{E}[Y]$.
+\end{enumerate}
+\textbf{Bemerkung 4.11:} Die Zufallsvariablen $X$ und $Y$ müssen dabei nicht unabhängig sein. \\
+\textbf{Bemerkung 4.12:} Unter Anwendung der Induktion für $n \geq 1$ ergibt sich direkt
+$\mathbb{E}\left[\lambda_{1} X_{1}+\lambda_{2} X_{2}+\cdots+\lambda_{n} X_{n}\right]=\lambda_{1} \mathbb{E}\left[X_{1}\right]+\lambda_{2} \mathbb{E}\left[X_{2}\right]+\cdots+\lambda_{n} \mathbb{E}\left[X_{n}\right]$
+für jede $Z . V . X_{1}, X_{2}, \ldots, X_{n}: \Omega \rightarrow E$, und für jedes $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n} \in \mathbb{R}$, unter der Annahme, dass die Erwartungswerte wohldefiniert sind. \\
+\green{Theorem 4.13:} Seien $X, Y$ zwei Zufallsvariablen. Falls $X$ und $Y$ unabhängig sind, dann ist
+$\mathbb{E}[X Y]=\mathbb{E}[X] \mathbb{E}[Y]$. \\
+\subsection{Extremwert Formel}
+\yellow{Satz $4.14$ (Tailsum-Formel f{\"u}r nichtnegative Zufallsvariablen):} Sei $X$ eine Zufallsvariable, sodass $X \geq 0$ fast sicher gilt. Dann folgt
+$\mathbb{E}[X]=\int_{0}^{\infty} \mathbb{P}[X>x] d x .$\\
+\yellow{Satz 4.15 (Extremwert Formel):} Sei $X$ eine diskrete Zufallsvariable mit Werten in $\mathbb{N}=\{0,1,2, \ldots\}$. Dann gilt folgende Identität
+$\mathbb{E}[X]=\sum_{n=1}^{\infty} \mathbb{P}[X \geq n]$.\\
+\subsection{Charakterisierung der Eigenschaften von Z.V.}
+\yellow{Satz 4.16. Sei $X$ eine Zufallsvariable:} Sei $f: \mathbb{R} \rightarrow \mathbb{R}_{+}$eine Abbildung, sodass $\int_{-\infty}^{+\infty} f(x) d x=1$. Dann sind folgende Aussagen äquivalent
+\begin{enumerate}
+    \item $X$ ist stetig mit Dichte $f$,
+    \item Für jede Abbildung stückweise stetige, beschränkte Abbildung $\phi: \mathbb{R} \rightarrow \mathbb{R}$ gilt
+    $\mathbb{E}[\phi(X)]=\int_{-\infty}^{\infty} \phi(x) f(x) d x$.
+\end{enumerate}
+\green{Theorem 4.17:} Seien $X, Y$ zwei diskrete Zufallsvariablen. Die folgenden Aussagen sind äquivalent
+\begin{enumerate}
+    \item $X, Y$ sind unabhängig,
+    \item Für jedes $\phi: \mathbb{R} \rightarrow \mathbb{R}, \psi: \mathbb{R} \rightarrow \mathbb{R}$ (messbar) beschränkt und stückweise stetig gilt
+    $\mathbb{E}[\phi(X) \psi(Y)]=\mathbb{E}[\phi(X)] \mathbb{E}[\psi(Y)]$.
+\end{enumerate}
+\green{Theorem 4.18:} Seien $X_{1}, \ldots, X_{n} n$ Zufallsvariablen. Die folgenden Aussagen sind äquivalent
+\begin{enumerate}
+    \item $X_{1}, \ldots, X_{n}$ sind unabhängig,
+    \item Für jedes $\phi_{1}: \mathbb{R} \rightarrow \mathbb{R}, \ldots, \phi_{n}: \mathbb{R} \rightarrow \mathbb{R}$ (messbar) beschränkt gilt
+    $\mathbb{E}\left[\phi_{1}\left(X_{1}\right) \cdots \phi_{n}\left(X_{n}\right)\right]=\mathbb{E}\left[\phi_{1}\left(X_{1}\right)\right] \cdots \mathbb{E}\left[\phi_{n}\left(X_{n}\right)\right]$
+\end{enumerate}
+\subsection{Ungleichungen}
+\yellow{Satz 4.19:} Seien $X, Y$ zwei Zufallsvariablen, sodass
+$X \leq Y \text { f.s. }$
+gilt. Falls beide Erwartungswerte wohldefiniert sind, folgt dann
+$\mathbb{E}[X] \leq \mathbb{E}[Y]$ fast sicher. \\
+\subsection{Markow Ungleichung}
 
 \newpage
 \end{multicols}
