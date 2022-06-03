@@ -703,9 +703,9 @@ $$\\
 \end{enumerate}
 \section{Grenzwertsätze}
 \textbf{Vorbemerkung:} In diesem Kapitel fixieren wir einen Wahrscheinlichkeitsraum $(\Omega, \mathcal{F}, \mathbb{P})$ und eine Folge von u.i.v.-Zufallsvariablen $X_{1}, X_{2}, \ldots$. Mit anderen Worten, wir erhalten Zufallsvariablen $X_{i}: \Omega \rightarrow \mathbb{R}$, so dass
-$$
+$
 \forall i_{1}<\cdots<i_{k} \forall x_{1}, \ldots x_{k} \in \mathbb{R} \quad \mathbb{P}\left[X_{i_{1}} \leq x_{1}, \ldots, X_{i_{k}} \leq x_{k}\right]=F\left(x_{1}\right) \cdots F\left(x_{k}\right)
-$$. Zudem ist $S_n = X_1 + X_2 + \dots + X_n$.
+$. Zudem ist $S_n = X_1 + X_2 + \dots + X_n$.
 \subsection{Gesetz der grossen Zahlen (GGZ)}
 \green{Theorem 6.1:} Sei $\mathbb{E}\left[\left|X_{1}\right|\right]<\infty$. Setzte $m=\mathbb{E}\left[X_{1}\right]$ dann gilt
 $$
@@ -787,7 +787,202 @@ Wir schreiben dann $X \sim \chi_{m}^{2}$. \\
 \yellow{Varianz von $X \sim \chi_{m}^{2}$:} Sei $X \sim \chi_{m}^{2}$, dann ist $\text{Var}[X] = 2n$. \\
 \yellow{Satz aus Aufgabe:} Seien die Zufallsvariablen $X_{1}, \ldots, X_{n}$ unabhängig und je $\mathcal{N}\left(\mu, \sigma^{2}\right)$-verteilt unter $\mathbb{P}_{\theta}$, 
 wobei $\theta=$ $\left(\mu, \sigma^{2}\right) \in \mathbb{R} \times(0, \infty)$ ein 2-dimensionaler unbekannter Parameter ist. Dann gilt
-$\frac{1}{\sigma^{2}} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} \sim \chi_{n-1}^{2}$-verteilt ist unter $\mathbb{P}_{\theta} .$
+$\frac{1}{\sigma^{2}} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} \sim \chi_{n-1}^{2}$-verteilt ist unter $\mathbb{P}_{\theta} .$\\
+\textbf{Bemerkung:} Die $\chi^{2}$ Verteilung mit $m$ Freiheitsgraden ist der Spezialfall einer $G a(\alpha, \lambda)$ Verteilung mit $\alpha=\frac{m}{2}$ und $\lambda=\frac{1}{2}$. Für $m=2$ ergibt das eine Exponentialverteilung mit Parameter $\frac{1}{2}$.\\
+\yellow{Satz 2.4:} Sind die Zufallsvariablen $X_{1}, \ldots, X_{m}$ u.i.v. $\sim \mathcal{N}(0,1)$, so ist die Summe $Y:=$ $\sum_{i=1}^{m} X_{i}^{2} \sim \chi_{m}^{2}$. \\
+\blue{Definition 2.5:} Eine stetige Zufallsvariable $X$ heisst t-verteilt mit m Freiheitsgraden falls ihre Dichte gegeben ist durch
+$$
+f_{X}(x)=\frac{\Gamma\left(\frac{m+1}{2}\right)}{\sqrt{m \pi} \Gamma\left(\frac{m}{2}\right)}\left(1+\frac{x^{2}}{m}\right)^{-\frac{m+1}{2}} \text { für } x \in \mathbb{R} .
+$$
+Wir schreiben dann $X \sim t_{m}$.\\
+\yellow{Satz 2.6:} Sind $X$ und $Y$ unabhängig mit $X \sim \mathcal{N}(0,1)$ und $Y \sim \chi_{m}^{2}$, so ist der Quotient
+$Z:=\frac{X}{\sqrt{\frac{1}{m} Y}}$ $t$-verteilt mit $m$ Freiheitsgraden. \\
+\textbf{Schätzer für $\sigma$ und $\mu$:} Wir betrachten folgende Fälle:\\
+Wir intressieren uns für \textbf{$\mu$}
+\begin{enumerate}
+    \item $\sigma^2$ bekannt
+    \item $\sigma^2$ unbekannt
+\end{enumerate}
+
+Wir intressieren uns für \textbf{$\sigma^2$}
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item $\mu$ bekannt
+    \item $\mu$ unbekannt
+\end{enumerate}
+
+Für $\mathbb{P}[Z \in [q_{-}, q_{+}]] = 1 - \alpha$ gilt:
+\begin{enumerate}
+    \item $Z = \sqrt{n}\frac{m - \mu}{\sigma} \sim \mathcal{N}\left(0, 1\right)$ wobei $m = \overline{X_n} = \frac{1}{n}\sum_{i = 1}^nX_i: Z \in [-q, q] \iff
+    m - \frac{q}{\sqrt{n}}\sigma \leq \mu \leq m +\frac{q}{\sqrt{n}}\sigma$
+    \item $Z = \sqrt{n}\frac{m - \mu}{S} \sim t_{n - 1}$ wobei $S^2 =  \frac{1}{n - 1}\sum_{i = 1}^n(X_i - \overline{X_n})^2: Z \in [-q, q] \iff
+    m - \frac{q}{\sqrt{n}}S \leq \mu \leq m +\frac{q}{\sqrt{n}}S$
+    \item $Z = \frac{n}{\sigma^2} \tilde{S^2}\sim \chi^{2}_{n}$ wobei $\tilde{S^2} =  \frac{1}{n}\sum_{i = 1}^n(X_i - \mu)^2: Z \in [q_{\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
+    \frac{n\tilde{S^2}}{q_{1-\frac{\alpha}{2}}} \leq \sigma^2 \leq \frac{n\tilde{S^2}}{q_{\frac{\alpha}{2}}}$
+    \item $Z = \frac{n - 1}{\sigma^2}S^2 \sim \chi^{2}_{n - 1}$ wobei $S^2 =  \frac{1}{n - 1}\sum_{i = 1}^n(X_i - \overline{X_n})^2: Z \in [q_{\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
+    \frac{(n - 1)S^2}{q_{1-\frac{\alpha}{2}}} \leq \sigma^2 \leq \frac{(n -1)S^2}{q_{\frac{\alpha}{2}}}$
+\end{enumerate}
+
+\yellow{Satz 2.7:} Seien $X_{1}, \ldots, X_{n}$ i.i.d. $\sim \mathcal{N}\left(\mu, \sigma^{2}\right) .$ Dann $\bar{X}_{n}$ und $S^{2}$ sind unabhängig.
+\subsection{Approximative Konfidenzintervalle}
+Einen allgemeinen\textbf{ approximativen Zugang} liefert der zentrale Grenzwertsatz. Oft ist ein Schätzer $T$ eine Funktion einer Summe $\sum_{i=1}^{n} Y_{i}$, wobei die $Y_{i}$ im Modell $P_{\theta}$ i.i.d. sind; das einfachste Beispiel ist $T=\bar{Y}_{n}=\frac{1}{n} \sum_{i=1}^{n} Y_{i}$. Nach dem zentralen Grenzwertsatz ist dann für grosse $n$
+$$
+\sum_{i=1}^{n} Y_{i} \quad \text { approximativ normalverteilt unter } \mathbb{P}_{\theta}
+$$
+mit Parametern $\mu=n \mathbb{E}_{\theta}\left[Y_{i}\right]$ und $\sigma^{2}=n \operatorname{Var}_{\theta}\left[Y_{i}\right]$. 
+Das kann man benutzen, um für die Verteilung von $T$ approximative Aussagen zu bekommen und damit gewisse Fragen 
+zumindest approximativ zu beantworten. Wir erhalten also $S_{n}^{*}:=\frac{S_{n}- \mu}{\sqrt{n \sigma^2}} \stackrel{\text { Approx }}{\approx} \mathcal{N}(0,1)$ unter $\mathbb{P}_{\theta}$.\\
+\subsubsection{Beispiel approximatives Intervall}
+Sei $S_n \sim \operatorname{Bin}(n, \theta)$. Dann folgt $S_{n}^{*} =\frac{S_{n}- n \theta}{\sqrt{n \theta(1- \theta)}}$. Also gilt
+$\mathbb{P}_{\theta}\left[\left|\frac{S_{n}-n \theta}{\sqrt{n \theta(1-\theta)}}\right| \leq z_{1-\frac{\alpha}{2}}\right]=\mathbb{P}_{\theta}\left[\left|S_{n}^{*}\right| \leq z_{1-\frac{\alpha}{2}}\right] \approx 1-\alpha$.
+Wir gehen davon aus, dass $\theta(1-\theta) \approx \frac{1}{4}$ ist und setzen das ein. Dann wollen wir also
+$$
+\left|S_{n}-n \theta\right| \leq z_{1-\frac{\alpha}{2}} \sqrt{\frac{n}{4}},
+$$
+und das approximative Konfidenzintervall für $\theta$ ergibt sich als
+$$
+\left[\bar{S}_{n}-\frac{z_{1-\frac{\alpha}{2}}}{2 \sqrt{n}}, \bar{S}_{n}+\frac{z_{1-\frac{\alpha}{2}}}{2 \sqrt{n}}\right] .
+$$
+\section{Tests}
+\subsection{Null- und Alternativhypothese}
+\begin{enumerate}
+    \item Nullhypothese $H_{0}: \theta \in \Theta_{0}$
+    \item Alternativhypothese $H_{A}: \theta \in \Theta_{A}$
+\end{enumerate}
+mit $\Theta_{0} \subset \Theta$ und $\Theta_{A} \subset \Theta$, wobei $\Theta_{0} \cap \Theta_{A} = \emptyset$.
+Ist keine explizite Alternative spezifiziert, so hat man $\Theta_{A}=\Theta_{0}^{c}=\Theta \backslash \Theta_{0}$. Null- und/oder Alternativhypothese heissen \textbf{einfach}, 
+falls $\Theta_{0}$ bzw. $\Theta_{A}$ aus einem einzelnen Wert, $\theta_{0}$ bzw. $\theta_{A}$, bestehen, 
+also z.B. $\Theta_{0}=\left\{\theta_{0}\right\}$ ist; sonst heissen sie \textbf{zusammengesetzt}. 
+\subsection{Test und Entscheidung}
+\blue{Definition 3.1:} Ein Test ist ein Paar $(T, K)$, wobei
+\begin{enumerate}
+    \item $T$ eine Zufallsvariable der Form $T=t\left(X_{1}, \ldots, X_{n}\right)$ ist, und
+    \item $K \subseteq \mathbb{R}$ eine (deterministische) Teilmenge von $\mathbb{R}$ ist.
+\end{enumerate}
+Die Zufallsvariable $T=t\left(X_{1}, \ldots, X_{n}\right)$ heisst dann Teststatistik, 
+und $K$ heisst kritischen Bereich oder Verwerfungsbereich. \\
+\textbf{Entscheidungsregel:}
+\begin{enumerate}
+    \item die Hypothese $H_{0}$ wird verworfen, falls $T(\omega) \in K$,
+    \item die Hypothese $H_{0}$ wird nicht verworfen bzw. angenommen, falls $T(\omega) \notin K$.
+\end{enumerate}
+\textbf{Fehler:}
+\begin{enumerate}
+    \item Bei einem Fehler 1. Art wird die Nullhypothese zu Unrecht verworfen, d.h. obwohl sie richtig ist. Das passiert für $\theta \in \Theta_{0}$ und $T \in K$; deshalb heisst $\mathbb{P}_{\theta}[T \in K]$ für $\theta \in \Theta_{0}$ die Wahrscheinlichkeit für einen Fehler 1. Art.
+    \item Bei einem Fehler 2. Art wird die Nullhypothese zu Unrecht nicht verworfen, d.h. man akzeptiert die Nullhypothese (verwirft sie nicht), obwohl sie falsch ist. Das passiert für $\theta \in \Theta_{A}$ und $T \notin K$, und deshalb heisst $\mathbb{P}_{\theta}[T \notin K]=1-\mathbb{P}_{\theta}[T \in K]$ für $\theta \in \Theta_{A}$ die Wahrscheinlichkeit für einen Fehler 2. Art.
+\end{enumerate}
+\subsection{Signifikanzniveau und Macht}
+\blue{Definition 3.2:} Sei $\alpha \in(0,1)$. Ein Test $(T, K)$ besitzt Signifikanzniveau $\alpha$, falls
+$\forall \theta \in \Theta_{0} \quad \mathbb{P}_{\theta}[T \in K] \leq \alpha$. \\
+\blue{Definition 3.3:} Die Macht eines Tests $(T, K)$ wird definiert als folgende Funktion
+$\beta: \Theta_{A} \rightarrow[0,1], \quad \theta \mapsto \beta(\theta):=\mathbb{P}_{\theta}[T \in K]$.
+\subsection{Konstruktion von Tests}
+\blue{Definition 3.5:} Für jedes $x_{1}, \ldots, x_{n}$, definieren wir den Likelihood-Quotienten durch
+$$
+R\left(x_{1}, \ldots, x_{n}\right):=\frac{L\left(x_{1}, \ldots, x_{n} ; \theta_{A}\right)}{L\left(x_{1}, \ldots, x_{n} ; \theta_{0}\right)} \text {. }
+$$
+Als Konvention setzten wir $R\left(x_{1}, \ldots, x_{n}\right)=+\infty$, falls $L\left(x_{1}, \ldots, x_{n} ; \theta_{0}\right)=0$.\\
+\textbf{Bemerkung:} Falls $R \gg 1$, ist $\Theta_{A}$ wahrscheinlicher und falls $R \ll 1$, ist $\Theta_{0}$ wahrscheinlicher.\\
+\blue{Definition 3.6:} Sei $c \geq 0$. Der Likelihood-Quotienten-Test mit Parameter $c$ ist ein Test $(T, K)$, wobei Teststatistik und Verwerfungsbereich gegeben sind durch
+$$
+T=R\left(X_{1}, \ldots, X_{n}\right) \quad \text { und } \quad K=(c, \infty]
+$$.
+\subsection{z-Test}
+Normalverteilung, Test für Erwartungswert bei bekannter Varianz: Dieser Test ist unter dem Namen $z$-Test bekannt. Hier sind $X_{1}, \ldots, X_{n}$ i.i.d. $\sim \mathcal{N}\left(\theta, \sigma^{2}\right)$ unter $\mathbb{P}_{\theta}$ mit bekannter Varianz $\sigma^{2}$, und wir wollen die Hypothese $H_{0}: \theta=\theta_{0}$ testen. 
+Mögliche Alternativen $H_{A}$ sind $\theta>\theta_{0}$ oder $\theta<\theta_{0}$ (einseitig), oder $\theta \neq \theta_{0}$ (zweiseitig). 
+Die Teststatistik hier ist in jedem Fall
+$$
+T:=\frac{\bar{X}_{n}-\theta_{0}}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \text { unter } \mathbb{P}_{\theta_{0}}.
+$$
+Wir können die Intervalle folgender massen wählen:
+\begin{enumerate}
+    \item $\alpha=\mathbb{P}_{\theta_{0}}\left[T \in K_{>}\right]=\mathbb{P}_{\theta_{0}}\left[T>c_{>}\right]=1-\mathbb{P}_{\theta_{0}}\left[T \leq c_{>}\right]=1-\Phi\left(c_{>}\right)$
+    \item $\alpha=\mathbb{P}_{\theta_{0}}\left[T<c_{<}\right]=\mathbb{P}_{\theta_{0}}\left[T>-c_{<}\right] = 1 - \mathbb{P}_{\theta_{0}}\left[T \leq -c_{<}\right]=\Phi\left(c_{<}\right)$ 
+    \item $\alpha=\mathbb{P}_{\theta_{0}}\left[T \in K_{\neq}\right]=\mathbb{P}_{\theta_{0}}\left[T<-c_{\neq}\right]+\mathbb{P}_{\theta_{0}}\left[T>c_{\neq}\right]=\Phi\left(-c_{\neq}\right)+1-\Phi\left(c_{\neq}\right)=2\left(1-\Phi\left(c_{\neq}\right)\right)$
+\end{enumerate}
+\subsection{Der p-Wert}
+\blue{Definition $3.9$ (Geordnete Testsammlung):} Sei $T$ eine Teststatistik. Eine Familie von Tests $\left(T,\left(K_{t}\right)_{t \geq 0}\right)$ heisst geordert bzgl. $\boldsymbol{T}$ falls $K_{t} \subset \mathbb{R}$ und
+$$
+s \leq t \Longrightarrow K_{s} \supset K_{t}
+$$
+gilt. \\
+\blue{Definition 3.10:} Sei $H_{0}: \theta=\theta_{0}$ eine einfache Nullhypothese. Sei $\left(T, K_{t}\right)_{t \geq 0}$ eine geordnete Familie von Test. Der $\boldsymbol{p}$ - Wert ist definiert als Zufallsvariable
+$$
+\text { p-Wert }=G(T),
+$$
+wobei $G: \mathbb{R}_{+} \rightarrow[0,1]$ mittels $G(t)=\mathbb{P}_{\theta_{0}}\left[T \in K_{t}\right]$ definiert ist. \\
+\textbf{Anmerkungen:}
+\begin{enumerate}
+    \item Der P-Wert ist als Funktion einer Teststatistik $T$ selbst eine Zufallsvariable.
+    \item Der P-Wert hängt direkt von den anfänglichen Beobachtungen $X_{1}, \ldots, X_{n}$ ab. Somit wird das Wiederholen des Test auch einen neuen (zufälligen) P-Wert generieren.
+    \item Der p-Wert liegt stets in $[0,1]$. Sei $T$ stetig ist und $K_{t}=(t, \infty)$, dann kann gezeigt werden, dass der $\mathrm{P}$-Wert unter $\mathbb{P}_{\theta_{0}}$ auf $[0,1]$ gleichverteilt ist.
+    \item Der P-Wert liefert uns die Information, welche Tests in unserer Familie $\left(T, K_{t}\right), t \geq 0$ die Nullhypothese $H_{0}$ ablehnen würden.
+    \item Für einen P-Wert mit Wert $p$ gilt, dass alle Tests mit Signifikanzniveau $\alpha>p$ die Nullhypothese $H_{0}$ verwerfen würden und alle Tests mit Signifikanzniveau $\alpha \leq p$ die Nullhypothese $H_{0}$ nicht verwerfen würden.
+    \item Der P-Wert ist nur von der Nullhypothese abhängig. Die Alternativhypothese spielt keine Rolle in der Definition des P-Werts.
+\end{enumerate}
+\textbf{Intuition:} $\mathrm{p}$-Wert ist klein $\Longrightarrow H_{0}$ wird wahrscheinlich verworfen.\\
+\subsection{Beispiel eines realisierten approximativen p-Wert}
+p-Wert $(\omega)=\left.\left.\left.\mathbb{P}_{\theta_{0}}\left[|T|>t_{0}\right]\right|_{t_{0}=T(\omega)} \approx 2 \mathbb{P}_{\theta_{0}}\left[T>t_{0}\right]\right|_{t_{0}=T(\omega)} \approx 2\left(1-\Phi\left(t_{0}\right)\right)\right|_{t_{0}=T(\omega)}$ 
+für $T \stackrel{\text { Approx }}{\approx} \mathcal{N}(0,1)$ unter $\mathbb{P}_{\Theta_{0}}$ und $K:=(-\infty,-c) \cup(+c,+\infty)$.
+\section{Zusätzliches}
+\subsection{t-Test}
+Normalverteilung, Test für Erwartungswert bei unbekannter Varianz. Hier sind $X_{1}, \ldots, X_{n}$ i.i.d. $\sim$ $\mathcal{N}\left(\mu, \sigma^{2}\right)$ unter $P_{\vec{\theta}}$, wobei $\vec{\theta}=\left(\mu, \sigma^{2}\right)$. Wir wollen die Hypothese $\mu=\mu_{0}$ testen. Die Teststatistik ist:
+$T:=\frac{\bar{X}_{n}-\mu_{0}}{S / \sqrt{n}} \sim t_{n-1} \quad$ unter $P_{\theta_{0}}$
+$S^{2}=\frac{1}{n-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2}$
+Und die Verwerfungsbereiche:
+$$
+\begin{array}{lll}
+c_{<}=t_{n-1, \alpha} & \left(-\infty, c_{<}\right) & \mu<\mu_{0} \\
+c_{>}=t_{n-1,1-\alpha} & \left(c_{>}, \infty\right) & \mu>\mu_{0} \\
+c_{\neq}=t_{n-1,1-\frac{\alpha}{2}} & \left(-\infty, c_{<}\right) \cup\left(c_{>}, \infty\right) & \mu \neq \mu_{0}
+\end{array}
+$$
+Wobei gilt $t_{m, \alpha}=-t_{m, 1-\alpha}$.\\
+\subsection{Gepaarter Zweiproben-Test}
+Hier $\operatorname{sind} X_{1}, \ldots, X_{n}$ i.i.d. $\sim \mathcal{N}\left(\mu_{X}, \sigma^{2}\right)$ 
+und $Y_{1}, \ldots, Y_{n}$ i.i.d. $\sim \mathcal{N}\left(\mu_{Y}, \sigma^{2}\right)$ 
+unter $P_{\theta}$. Insbesondere ist $m=n$ und die Varianz beider Stichproben dieselbe. 
+Differenzen $Z_{i}:=X_{I}-Y_{i}$ sind unter $P_{\theta}$ i.i.d. $\mathcal{N}\left(\mu_{X}-\mu_{Y}, 2 \sigma^{2}\right)$. 
+Dann analog $z$ und $t$-Test. (Setzt natürliche Paarung von Daten voraus!)\\
+\subsection{Ungepaarter Zweiproben-Test}
+Hier sind unter $P_{\theta}$ die Zufallsvariablen $X_{1}, \ldots, X_{n}$ i.i.d. 
+$\sim \mathcal{N}\left(\mu_{X}, \sigma^{2}\right)$ und $Y_{1}, \ldots, Y_{m}$ i.i.d. 
+$\sim \mathcal{N}\left(\mu_{Y}, \sigma^{2}\right)$, wobei die Varianz in beiden Fällen dieselbe ist.
+\begin{enumerate}
+    \item Bei bekannter Varianz:
+    $$
+    \begin{aligned}
+    &H_{0}: \mu_{X}-\mu_{Y}=\mu_{0} \quad\left(z . B . \mu_{0}=0\right) \\
+    &T=\frac{\bar{X}_{n}-\bar{Y}_{m}-\left(\mu_{X}-\mu_{Y}\right)}{\sigma \sqrt{\frac{1}{n}+\frac{1}{m}}} \sim \mathcal{N}(0,1)
+    \end{aligned}
+    $$
+    Die kritischen Werte für den Verwerfungsbereich sind wie oben geeignete Quantile der $\mathcal{N}(0,1)$ Verteilung, je nach Alternative. Das ist der ungepaarte Zweistichproben- $z$-Test.
+    \item Bei unbekannter Varianz:
+    $$
+    \begin{aligned}
+    S_{X}^{2} &:=\frac{1}{n-1} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} \\
+    S_{Y}^{2} &:=\frac{1}{m-1} \sum_{j=1}^{m}\left(Y_{j}-\bar{Y}_{m}\right)^{2} \\
+    S^{2} &:=\frac{1}{m+n-2}\left((n-1) \cdot S_{X}^{2}+(m-1) \cdot S_{Y}^{2}\right) \\
+    T &=\frac{\bar{X}_{n}-\bar{Y}_{m}-\left(\mu_{X}-\mu_{Y}\right)}{S \sqrt{\frac{1}{n}+\frac{1}{m}}} \sim t_{n+m-2}
+    \end{aligned}
+    $$
+    unter jedem $P_{\theta}$. Dieser Test heisst ungepaarter Zweistichproben- $t$-Test.
+\end{enumerate}
+\subsection{Integral}
+\yellow{Prob. 3.36:} Let be $A = \{(x,y) | a \leq x \leq b, \rho_1(x) \leq y \leq \rho_2(x) \}$. Let $f: A \rightarrow \mathbb{R}$ be continuous. Then $f$ is integrable on $A$ and the following is true
+$$
+\int_Af(x,y) d(x,y) = \int_{a}^b dx \int_{\rho_1(x)}^{\rho_2(x)}f(x,y)dy.
+$$\\
+\yellow{Satz $5.30$ (Partielle Integration):} Seien $a<b$ relle Zahlen und $f, g:[a, b] \longrightarrow \mathbb{R}$ 
+stetig differenzierbar. Dann gilt: $\int_{a}^{b} f(x) g^{\prime}(x) d x=f(b) g(b)-f(a) 
+g(a)-\int_{a}^{b} f^{\prime}(x) g(x) d x$.\\
+\yellow{Satz $5.31$ (Substitution):} Sei $a<b, \phi:[a, b] \longrightarrow \mathbb{R}$ stetig differenzierbar, 
+$I \subseteq \mathbb{R}$ ein Intervall mit $\phi([a, b]) \subseteq I$ und $f: I \longrightarrow \mathbb{R}$ eine stetige Funktion. Dann gilt:
+$\int_{\phi(a)}^{\phi(b)} f(x) d x=\int_{a}^{b} f(\phi(t)) \phi^{\prime}(t) d t$.\\
+\subsection{Allgemeines}
+\textbf{Mitternachtsformel: } $a x^2 + b x + c = 0 \Longleftrightarrow x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$\\
+\textbf{pq-Formel: } $x^2 + p x + q = 0 \Longleftrightarrow x_{1,2} = - \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$
+\includegraphics[width = 0.3\textwidth]{unit_circle_angles.png}
 
 \newpage
 \end{multicols}
