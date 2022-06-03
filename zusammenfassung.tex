@@ -439,7 +439,8 @@ $\sum_{k=0}^{\infty} p(k)=e^{-\lambda} \sum_{k=0}^{\infty} \frac{\lambda^{k}}{k 
 $$
 \forall k \in \mathbb{N} \quad \lim _{n \rightarrow \infty} \mathbb{P}\left[X_{n}=k\right]=\mathbb{P}[N=k],
 $$
-wobei $N$ eine Poisson Zufallsvariable mit Parameter $\lambda$.
+wobei $N$ eine Poisson Zufallsvariable mit Parameter $\lambda$. \\
+\yellow{Reproduktivit{\"a}t:} Die Poisson-Verteilung ist reproduktiv, d. h., die Summe $X_{1}+X_{2}+\cdots+X_{n}$ stochastisch unabhängiger Poisson-verteilter Zufallsvariablen $X_{1}, X_{2}, \ldots, X_{n}$ mit den Parametern $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}$ ist wieder Poisson-verteilt mit dem Parameter $\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}$. 
 \subsection{Stetige Verteilungen}
 \blue{Definition $3.25$ (Stetig verteilte Zufallsvariablen):} Eine Zufallsvariable $X: \Omega \rightarrow \mathbb{R}$ heisst stetig, wenn ihre Verteilungsfunktion $F_{X}$ wie folgt geschrieben werden kann
 $$
@@ -542,11 +543,9 @@ solange das Integral wohldefiniert ist.\\
 Sei $X \sim \exp (\lambda)$. Dann gilt $\mathbb{E}[X] = \frac{1}{\lambda}$.
 \subsubsection{gleichverteilte Zufallsvariable}
 Sei $X \sim \mathcal{U}([a, b])$. Dann gilt $\mathbb{E}[X] = \frac{a + b}{2}$.
-\subsubsection{gleichverteilte Zufallsvariable}
-Sei $X \sim \mathcal{U}([a, b])$. Dann gilt $\mathbb{E}[X] = \frac{a + b}{2}$.
 \subsubsection{Normalverteilung}
 Sei $X \sim \mathcal{N}\left(\mu , \sigma^{2}\right)$. Dann gilt $\mathbb{E}[X] = \mu$.
-\subsection{ Rechnen mit Zufallsvariable}
+\subsection{Rechnen mit Zufallsvariable}
 \green{Theorem $4.10$ (Linearit{\"a}t des Erwartungswert):} Seien $X, Y: \Omega \rightarrow \mathbb{R}$ Zufallsvariablen, sei $\lambda \in \mathbb{R}$. 
 Falls die Erwartungswerte wohldefiniert sind gilt
 \begin{enumerate}
@@ -589,6 +588,206 @@ $X \leq Y \text { f.s. }$
 gilt. Falls beide Erwartungswerte wohldefiniert sind, folgt dann
 $\mathbb{E}[X] \leq \mathbb{E}[Y]$ fast sicher. \\
 \subsection{Markow Ungleichung}
+\green{Theorem $4.20$ (Markow-Ungleichung):} Sei $X$ eine nicht-negative Zufallsvariable. Für jedes $a>0$ gilt dann
+$\mathbb{P}[X \geq a] \leq \frac{\mathbb{E}[X]}{a}$.
+\subsection{Jensen Ungleichung}
+\green{Theorem $4.21$ (Jensen Ungleichung):} Sei $X$ eine Zufallsvariable. Sei $\phi: \mathbb{R} \rightarrow \mathbb{R}$ eine konvexe Funktion. Falls $\mathbb{E}[\phi(X)]$ und $\mathbb{E}[X]$ wohldefiniert sind, gilt
+$\phi(\mathbb{E}[X]) \leq \mathbb{E}[\phi(X)]$.
+\subsection{Cauchy-Schwarz Ungleichungen}
+\green{Theorem 4.22:} Seien $X,Y$ zwei Zufallsvariablen mit $\mathbb{E}[X^2],\mathbb{E}[Y^2] < \infty$. Dann gilt 
+$\mathbb{E}[XY] \leq \sqrt{\mathbb{E}[X^2]} \cdot \sqrt{\mathbb{E}[Y^2]}$.
+\subsection{Varianz}
+\blue{Definition 4.22:} Sei $X$ eine Zufallsvariable, sodass $\mathbb{E}\left[X^{2}\right]<\infty$. Wir definieren die $V a$ rianz von $X$ durch
+$\sigma_{X}^{2}=\mathbb{E}\left[(X-m)^{2}\right], \quad \text { wobei } m=\mathbb{E}[X]$
+Die Wurzel aus $\sigma_{X}^{2}$ nennen wir gerade die Standardabweichung von $X$.\\
+\textbf{Bemerkung 4.23:} Falls $\mathbb{E}\left[X^{2}\right]<\infty$, dann gilt gerade $\mathbb{E}[|X|]<\infty$ durch Gleichung. (4.7) und somit ist $m=\mathbb{E}[X]$ wohldefiniert.\\
+\yellow{Satz $4.24$ (Grundlegende Eigenschaften der Varianz):}
+\begin{enumerate}
+    \item  Sei $X$ eine Zufallsvariable mit $\mathbb{E}\left[X^{2}\right]<\infty$. Dann gilt
+    $\sigma_{X}^{2}=\mathbb{E}\left[X^{2}\right]-\mathbb{E}[X]^{2}$
+    \item Sei $X$ eine Zufallsvariable mit $\mathbb{E}\left[X^{2}\right]<\infty$ und sei $\lambda \in \mathbb{R}$. Dann gilt
+    $\sigma_{\lambda X}^{2}=\lambda^{2} \cdot \sigma_{X}^{2}.$
+    \item Seien $X_{1}, \ldots, X_{n} n$-viele paarweise unabhängigen $Z$ ufallsvariablen und $S=X_{1}+\cdots+$ $X_{n}$. Dann gilt
+    $\sigma_{S}^{2}=\sigma_{X_{1}}^{2}+\cdots+\sigma_{X_{n}}^{2}.$
+\end{enumerate}
+\green{Theorem 4.24:} Sei $X$ eine Zufallsvariable mit $\mathbb{E}\left[X^{2}\right]<\infty$. Dann gilt für alle $a \geq 0$
+$\mathbb{P}[|X-m| \geq a] \leq \frac{\sigma_{X}^{2}}{a^{2}}, \quad \text { where } m=\mathbb{E}[X]$.
+\subsection{Beispiele Varianz von Zufallsvariablen}
+\subsubsection{Bernoulli Zufallsvariable}
+Sei $X$ eine Bernoulli Zufallsvariable mit Parameter $p$. Dann gilt
+$\text{Var}[X] = p \cdot (1 - p)$.
+\subsubsection{Binomial Zufallsvariable}
+Sei $X \sim \operatorname{Bin}(n, p)$, dann gilt $\text{Var}[X] = n\cdot p \cdot (1 - p)$.
+\subsubsection{Poisson Zufallsvariable}
+Sei $X$ Poisson-verteilt mit Parameter $\lambda>0$, dann gilt
+$\text{Var}[X] = \lambda .$
+\subsubsection{Indikator Zufallsvariable}
+Sei $A \in \mathcal{F}$ ein Ereignis. Sei $\mathbb{1}_{A}$ die Indikator Funktion auf $A$, dann gilt $\text{Var}[\mathbb{1}_{A}]= \mathbb{P}[A] - (\mathbb{P}[A])^2.$
+\subsubsection{geometrische Zufallsvariable}
+Sei $X \sim \operatorname{Geom}(p)$, dann gilt $\text{Var}[X] = \frac{1}{p^2} - \frac{1}{p}$
+\subsubsection{Exponential Zufallsvariable}
+Sei $X \sim \exp (\lambda)$. Dann gilt $\text{Var}[X] = \frac{1}{\lambda^2}$.
+\subsubsection{gleichverteilte Zufallsvariable}
+Sei $X \sim \mathcal{U}([a, b])$. Dann gilt $\text{Var}[X] = \frac{1}{12} \cdot (b - a)^2$.
+\subsubsection{Normalverteilung}
+Sei $X \sim \mathcal{N}\left(\mu , \sigma^{2}\right)$. Dann gilt $\text{Var}[X] = \sigma^{2}$.
+\subsection{Kovarianz}
+\blue{Definition 4.25:} Seien $X, Y$ zwei Zufallsvariablen mit endlichen zweiten Momenten $\mathbb{E}\left[X^{2}\right]<\infty$ und $\mathbb{E}\left[Y^{2}\right]<\infty$. Wir definieren die Kovarianz zwischen $X$ und $Y$ durch
+$\operatorname{Cov}(X, Y)=\mathbb{E}[X Y]-\mathbb{E}[X] \mathbb{E}[Y]$. \\
+\textbf{Bemerkung:} Die endlichen zweiten Momente von $X$ und $Y$ ermöglichen die Wohldefiniertheit der Kovarianz von $X$ und $Y$. Hierfür wende man die elementare Ungleichung $|X Y| \leq \frac{1}{2} X^{2}+\frac{1}{2} Y^{2}$ in Kombination mit Monotonie und Linearität des Erwartungswerts an, um folgende Ungleichung zu erhalten
+$$
+\mathbb{E}[|X Y|] \leq \frac{1}{2} \mathbb{E}\left[X^{2}\right]+\frac{1}{2} \mathbb{E}\left[Y^{2}\right]<\infty .
+$$
+Analog zum Abschnitt 4, verschwindet die Kovarianz von unabhängigen Zufallsvariablen $X$ und $Y$, somit gilt
+$$
+X, Y \text { unabhängig } \Longrightarrow \operatorname{Cov}(X, Y)=0 \text {. }
+$$
+Die Umgekehrte Implikation ist falsch (Siehe Serie 6.6). Nichtsdestotrotz sehen wir in Abschnitt 6, dass wir eine Charakterisierung mittels beschränkten und stetigen Testfunktionen erhalten. Mittels Theorem 4.17, erhalten wir folgende Charakterisierung
+$X, Y$ Unabhängig $\Longleftrightarrow \forall \phi, \psi$ stückweise stetig, beschränkt $\operatorname{Cov}(\phi(X), \psi(Y))=0$.
+\section{Gemeinsame Verteilung}
+\subsection{Gemeinsame diskrete Verteilung}
+\blue{Definition 5.1:} Seien $X_{1}, \ldots, X_{n} n$ diskrete Zufallsvariablen, sei $W_{i} \subset \mathbb{R}$ endlich oder abzählbar, wobei $X_{i} \in W_{i}$ fast sicher gilt. Die gemeinsame Verteilung von $\left(X_{1}, \ldots, X_{n}\right)$ ist eine Familie $p=\left(p\left(x_{1}, \ldots, x_{n}\right)\right)_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}}$, wobei jedes Mitglied definiert ist durch
+$p\left(x_{1}, \ldots, x_{n}\right)=\mathbb{P}\left[X_{1}=x_{1}, \ldots, X_{n}=x_{n}\right] .$\\
+\yellow{Satz 5.2:} Eine gemeinsame Verteilung von Zufallsvariablen $X_{1}, \ldots, X_{n}$ erfüllt
+$\sum_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}} p\left(x_{1}, \ldots, x_{n}\right)=1 .$\\
+\yellow{Satz 5.3:} Sei $n \geq 1$ und seien $\phi: \mathbb{R}^{n} \rightarrow \mathbb{R}$ Abbildungen. Seien $X_{1}, \ldots, X_{n} n$ diskrete Zufallsvariablen in $(\Omega, \mathcal{F}, \mathbb{P})$, welche fast sicher Werten in endlichen oder abzählbaren Mengen $W_{1}, \ldots, W_{n}$ annehmen. Dann ist $Z=\phi\left(X_{1}, \ldots, X_{n}\right)$ eine diskrete Zufallsvariable, welche fast sicher Werte in $W=\phi\left(W_{1} \times \cdots \times W_{n}\right)$ annimmt. Zudem ist die Verteilung von $Z$ gegeben durch
+$$
+\forall z \in W \quad \mathbb{P}[Z=z]=\sum_{\substack{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n} \\ \phi\left(x_{1}, \ldots, x_{n}\right)=z}} \mathbb{P}\left[X_{1}=x_{1}, \ldots X_{n}=x_{n}\right]
+$$\\
+\yellow{Satz 5.4 (Randverteilung):} Seien $X_{1}, \ldots, X_{n} n$ diskrete Zufallsvariablen mit gemeinsamer Verteilung $p=\left(p\left(x_{1}, \ldots, x_{n}\right)\right)_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}}$. Für jedes $i$ gilt
+$
+\forall z \in W_{i} \quad \mathbb{P}\left[X_{i}=z\right]=\sum_{x_{1}, \ldots, x_{i-1}, x_{i+1}, \ldots, x_{n}} p\left(x_{1}, \ldots, x_{i-1}, z, x_{i+1}, \ldots, x_{n}\right) \text {. }
+$\\
+\yellow{Satz 5.5 (Erwartungswert des Bildes):} Seien $X_{1}, \ldots, X_{n} n$ diskrete Zufallsvariablen mit gemeinsamer Verteilung $p=\left(p\left(x_{1}, \ldots, x_{n}\right)\right)_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}}$. Sei $\phi: \mathbb{R}^{n} \rightarrow \mathbb{R}$, dann gilt
+$$
+\mathbb{E}\left[\phi\left(X_{1}, \ldots, X_{n}\right)\right]=\sum_{x_{1}, \ldots, x_{n}} \phi\left(x_{1}, \ldots, x_{n}\right) p\left(x_{1}, \ldots, x_{n}\right),
+$$
+solange die Summe wohldefiniert ist.\\
+\yellow{Satz 5.6:} Seien $X_{1}, \ldots, X_{n}$ diskrete Zufallsvariablen mit gemeinsamer Verteilung $p=$ $\left(p\left(x_{1}, \ldots, x_{n}\right)\right)_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}}$. Die folgenden Aussagen sind äquivalent
+\begin{enumerate}
+    \item $X_{1}, \ldots, X_{n}$ sind unabhängig,
+    \item $p\left(x_{1}, \ldots, x_{n}\right)=\mathbb{P}\left[X_{1}=x_{1}\right] \cdots \mathbb{P}\left[X_{n}=x_{n}\right]$ für jedes $x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}$.
+\end{enumerate}
+\subsection{Stetige Gemeinsame Verteilung}
+\blue{Definition 5.7:} Sei $n \geq 1$. Wir sagen, dass die Zufallsvariablen $X_{1}, \ldots, X_{n}: \Omega \rightarrow \mathbb{R}$ eine stetige gemeinsame Verteilung besitzen, falls eine Abbildung $f: \mathbb{R}^{n} \rightarrow \mathbb{R}_{+}$ existiert, sodass
+$$
+\mathbb{P}\left[X_{1} \leq a_{1}, \ldots, X_{n} \leq b\right]=\int_{-\infty}^{a_{1}} \cdots \int_{-\infty}^{a_{n}} f\left(x_{1}, \ldots, x_{n}\right) d x_{n} \ldots d x_{1}
+$$
+für jedes $a_{1}, \ldots, a_{n} \in \mathbb{R}$ gilt. Obige Abbildung $f$ nennen wir gerade gemeinsame Dichte von $\left(X_{1}, \ldots, X_{n}\right)$.\\
+\yellow{Satz 5.9:} Sei $f$ die gemeinsame Dichte der Zufallsvariablen $\left(X_{1}, \ldots, X_{n}\right)$. Dann gilt
+$\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f\left(x_{1}, \ldots, x_{n}\right) d x_{n} \ldots d x_{1}=1$.\\
+\yellow{Satz 5.10 (Erwartungswert):} Sei $\phi: \mathbb{R}^{n} \rightarrow \mathbb{R}$ eine Abbildung. Falls $X_{1}, \ldots, X_{n}$ eine gemeinsame Dichte $f$ besitzen, dann lässt sich der Erwartungswert der $Z$ ufallsvariablen $Z=\phi\left(X_{1}, \ldots, X_{n}\right)$ mittels
+$\mathbb{E}[\phi(X, Y)]=\int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} \phi\left(x_{1}, \ldots, x_{n}\right) \cdot f\left(x_{1}, \ldots, x_{n}\right) d x_{1} \ldots d x_{n},$
+berechnen (solange das Integral wohldefiniert ist). \\
+\blue{Randverteilung:}
+Falls $X, Y$ eine gemeinsame Dichte $f_{X, Y}$ besitzt, dann gilt
+$$
+\begin{aligned}
+\mathbb{P}[X \leq a] &=\mathbb{P}[X \in[-\infty, a], Y \in[-\infty, \infty]] \\
+&=\int_{-\infty}^{a}\left(\int_{-\infty}^{\infty} f(x, y) d y\right) d x .
+\end{aligned}
+$$
+Somit ist $X$ stetig mit folgender Dichte
+$$
+f_{X}(x)=\int_{-\infty}^{\infty} f(x, y) d y .
+$$
+Analog ist $Y$ stetig mit folgender Dichte
+$$
+f_{Y}(y)=\int_{-\infty}^{\infty} f(x, y) d x
+$$\\
+\green{Theorem 5.11:} Seien $X_{1}, \ldots, X_{n}$ Zufallsvariablen mit Dichten $f_{1}, \ldots f_{n}$. Dann ist folgende Aussagen äquivalent
+\begin{enumerate}
+    \item $X_{1}, \ldots, X_{n}$ sind unabhängig,
+    \item  $X_{1}, \ldots, X_{n}$ sind insgesamt stetig mit gemeinsamer Dichte
+    $f\left(x_{1}, \ldots, x_{n}\right)=f_{1}\left(x_{1}\right) \ldots f_{n}\left(x_{n}\right).$
+\end{enumerate}
+\section{Grenzwertsätze}
+\textbf{Vorbemerkung:} In diesem Kapitel fixieren wir einen Wahrscheinlichkeitsraum $(\Omega, \mathcal{F}, \mathbb{P})$ und eine Folge von u.i.v.-Zufallsvariablen $X_{1}, X_{2}, \ldots$. Mit anderen Worten, wir erhalten Zufallsvariablen $X_{i}: \Omega \rightarrow \mathbb{R}$, so dass
+$$
+\forall i_{1}<\cdots<i_{k} \forall x_{1}, \ldots x_{k} \in \mathbb{R} \quad \mathbb{P}\left[X_{i_{1}} \leq x_{1}, \ldots, X_{i_{k}} \leq x_{k}\right]=F\left(x_{1}\right) \cdots F\left(x_{k}\right)
+$$. Zudem ist $S_n = X_1 + X_2 + \dots + X_n$.
+\subsection{Gesetz der grossen Zahlen (GGZ)}
+\green{Theorem 6.1:} Sei $\mathbb{E}\left[\left|X_{1}\right|\right]<\infty$. Setzte $m=\mathbb{E}\left[X_{1}\right]$ dann gilt
+$$
+\lim _{n \rightarrow \infty} \frac{X_{1}+\cdots+X_{n}}{n}=m \text { fast sicher. }
+$$\\
+\subsection{Konvergenz in Verteilung}
+\blue{Definition 6.3:} Seien $\left(X_{n}\right)_{n \in \mathbb{N}}$ und $X$ Zufallsvariablen. Wir schreiben
+$X_{n} \underset{\approx}{\text { Approx }} X \text { as } n \rightarrow \infty$
+falls für jedes $x \in \mathbb{R}$
+$\lim _{n \rightarrow \infty} \mathbb{P}\left[X_{n} \leq x\right]=\mathbb{P}[X \leq x]$\\
+\subsection{Zentraler Grenzwertsatz}
+\green{Theorem $6.4$ (Zentraler Grenzwertsatz (ZGWS)):} Nehme an, dass der Erwartungswert $\mathbb{E}\left[X_{1}^{2}\right]$ wohldefiniert und endlich ist. Setzte $m=\mathbb{E}\left[X_{1}\right]$ und $\sigma^{2}=\operatorname{Var}\left(X_{1}\right)$, dann gilt folgender Grenzwert
+$$\mathbb{P}\left[\frac{S_{n}-n \cdot m}{\sqrt{\sigma^{2} n}} \leq a\right] \underset{n \rightarrow \infty}{\longrightarrow} \Phi(a)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{a} e^{-x^{2} / 2} d x$$
+für jedes $a \in \mathbb{R}$. \\
+\textbf{Bemerkung:} Beachte gerade, dass $\Phi$ gerade die Verteilungsfunktion einer Zufallsvariable $Z \sim$ $\mathcal{N}(0,1)$ ist. Der Satz besagt somit, dass für grosse $n \in \mathbb{N}$ die Zufallsvariable
+$$
+Z_{n}=\frac{S_{n}-n \cdot m}{\sqrt{\sigma^{2} n}}
+$$
+in Verteilung $Z \sim \mathcal{N}(0,1)$ ähnelt.
+\section{Schätzer}
+\subsection{Grundbegriffe}
+\blue{Definition 1.1:} Ein Schätzer ist eine Zufallsvariable $T: \Omega \rightarrow \mathbb{R}$ der Form
+$$
+T=t\left(X_{1}, \ldots, X_{n}\right),
+$$
+wobei $t: \mathbb{R}^{n} \rightarrow \mathbb{R}$.
+\subsection{Bias}
+\blue{Definition 1.2:} Ein Schätzer $T$ heisst erwartungstreu für $\theta$, falls für alle $\theta \in \Theta$ gilt
+$\mathbb{E}_{\theta}[T]=\theta$.\\
+\blue{Definition 1.3:} Sei $\theta \in \Theta$, und $T$ ein Schätzer. Der Bias (oder erwartete Schätzfehler) von $T$ im Modell $\mathbb{P}_{\theta}$ ist definiert als
+$$
+\mathbb{E}_{\theta}[T]-\theta
+$$
+Der mittlere quadratische Schätzfehler (``mean squared error'', MSE) von $T$ im Modell $\mathbb{P}_{\theta}$ ist definiert als
+$$
+\operatorname{MSE}_{\theta}[T]:=\mathbb{E}_{\theta}\left[(T-\theta)^{2}\right]
+$$
+\textbf{Bemerkung:} Man kann den MSE zerlegen als
+$$
+\operatorname{MSE}_{\theta}[T]=\mathbb{E}_{\theta}\left[(T-\theta)^{2}\right]=\operatorname{Var}_{\theta}[T]+\left(\mathbb{E}_{\theta}[T]-\theta\right)^{2},
+$$
+also in die Summe aus der Varianz des Schätzers $T$ und dem Quadrat des Bias. Für erwartungstreue Schätzer sind Varianz und MSE dasselbe. \\
+\subsection{Die Maximum-Likelihood-Methode (ML-Methode)}
+\blue{Definition 1.4:} Die Likelihood-Funktion ist
+$$
+L\left(x_{1}, \ldots, x_{n} ; \theta\right):= \begin{cases}p_{\vec{X}}\left(x_{1}, \ldots, x_{n} ; \theta\right) & \text { im diskreten Fall, } \\ f_{\vec{X}}\left(x_{1}, \ldots, x_{n} ; \theta\right) & \text { im stetigen Fall. }\end{cases}
+$$
+mit $p_{\vec{X}}\left(x_{1}, \ldots, x_{n} ; \theta\right)=\prod_{i=1}^{n} p_{X}\left(x_{i} ; \theta\right)$ und $f_{\vec{X}}\left(x_{1}, \ldots, x_{n} ; \theta\right)=\prod_{i=1}^{n} f_{X}\left(x_{i} ; \theta\right)$.
+Die Funktion $\log L\left(x_{1}, \ldots, x_{n} ; \theta\right)$ heisst \textbf{log-Likelihood-Funktion}. \\
+\blue{Definition 1.5:} Für jedes $x_{1}, \ldots, x_{n}$, sei $t_{M L}\left(x_{1}, \ldots, x_{n}\right) \in \mathbb{R}$ der Wert, der $\theta \mapsto$ $L\left(x_{1}, \ldots, x_{n} ; \theta\right)$ als Funktion von $\theta$ maximiert. D.h.,
+$$
+L\left(x_{1}, \ldots, x_{n} ; t_{M L}\left(x_{1}, \ldots, x_{n}\right)\right)=\max _{\theta \in \Theta} L\left(x_{1}, \ldots, x_{n} ; \theta\right)
+$$
+Ein Maximum-Likelihood-Schätzer (ML-Schätzer) $T_{\mathrm{ML}}$ für $\theta$ wird definiert durch $T_{\mathrm{ML}}=t_{\mathrm{ML}}\left(X_{1}, \ldots, X_{n}\right)$.\\
+\textbf{Bemerkung:}
+In den Rechnungen arbeitet man oft mit $L\left(x_{1}, \ldots, x_{n} ; \theta\right)$, insbesondere beim Maximieren über 
+$\theta$. Das optimale $\theta^{*}$ ist dann eine Funktion $t_{\mathrm{ML}}\left(x_{1}, \ldots, x_{n}\right)$ von 
+$x_{1}, \ldots, x_{n}$. Damit der resultierende Schätzer $T_{\mathrm{ML}}$ von der Stichprobe $X_{1}, \ldots, X_{n}$ abhängt, 
+muss dann aber $x_{1}, \ldots, x_{n}$ durch $X_{1}, \ldots, X_{n}$ ersetzt werden, d.h. der Maximum-Likelihood-Schätzer 
+ist $T_{\mathrm{ML}}=t_{\mathrm{ML}}\left(X_{1}, \ldots, X_{n}\right)$. \\
+\section{Konfidenzintervalle}
+\subsection{Definition}
+\blue{Definition 2.1:} Sei $\alpha \in[0,1]$. Ein Konfidenzintervall für $\theta$ mit Niveau $1-\alpha$ ist ein Zufallsintervall $I=[A, B]$, sodass gilt
+$$
+\forall \theta \in \Theta \quad \mathbb{P}_{\theta}[A \leq \theta \leq B] \geq 1-\alpha
+$$
+wobei $A, B$ Zufallsvariablen der Form $A=a\left(X_{1}, \ldots, X_{n}\right), B=b\left(X_{1}, \ldots, X_{n}\right)$ mittels 
+$a, b: \mathbb{R}^{n} \rightarrow \mathbb{R}$ sind.\\
+\textbf{Bemerkung 2.2:} In Eq. (2.1), ist der Paramter $\theta$ deterministisch und nicht zufällig. 
+Die stochastischen Elemente sind gerade die Schranken $A=a\left(X_{1}, \ldots, X_{n}\right)$ und 
+$B=b\left(X_{1}, \ldots, X_{n}\right)$. \\
+\subsection{Verteilungsaussagen}
+\blue{Definition 2.3:} Eine stetige Zufallsvariable $X$ heisst $\chi^{2}$-Verteilt mit $m$ Freiheitsgraden falls ihre Dichte gegeben ist durch
+$$
+f_{X}(y)=\frac{1}{2^{\frac{m}{2}} \Gamma\left(\frac{m}{2}\right)} y^{\frac{m}{2}-1} e^{-\frac{1}{2} y} \text { für } y \geq 0 .
+$$
+Wir schreiben dann $X \sim \chi_{m}^{2}$. \\
+\yellow{Erwartungswert von $X \sim \chi_{m}^{2}$:} Sei $X \sim \chi_{m}^{2}$, dann ist $\mathbb{E}[X] = n$. \\
+\yellow{Varianz von $X \sim \chi_{m}^{2}$:} Sei $X \sim \chi_{m}^{2}$, dann ist $\text{Var}[X] = 2n$. \\
+\yellow{Satz aus Aufgabe:} Seien die Zufallsvariablen $X_{1}, \ldots, X_{n}$ unabhängig und je $\mathcal{N}\left(\mu, \sigma^{2}\right)$-verteilt unter $\mathbb{P}_{\theta}$, 
+wobei $\theta=$ $\left(\mu, \sigma^{2}\right) \in \mathbb{R} \times(0, \infty)$ ein 2-dimensionaler unbekannter Parameter ist. Dann gilt
+$\frac{1}{\sigma^{2}} \sum_{i=1}^{n}\left(X_{i}-\bar{X}_{n}\right)^{2} \sim \chi_{n-1}^{2}$-verteilt ist unter $\mathbb{P}_{\theta} .$
 
 \newpage
 \end{multicols}
