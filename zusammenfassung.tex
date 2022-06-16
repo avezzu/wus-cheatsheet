@@ -897,8 +897,8 @@ $$\\
 \textbf{Bemerkung:} Falls $R \gg 1$, ist $\Theta_{A}$ wahrscheinlicher und falls $R \ll 1$, ist $\Theta_{0}$ wahrscheinlicher.\\
 \blue{Definition 3.6:} Sei $c \geq 0$. Der Likelihood-Quotienten-Test mit Parameter $c$ ist ein Test $(T, K)$, wobei Teststatistik und Verwerfungsbereich gegeben sind durch
 $$
-T=R\left(X_{1}, \ldots, X_{n}\right) \quad \text { und } \quad K=(c, \infty]
-$$.
+T=R\left(X_{1}, \ldots, X_{n}\right) \quad \text { und } \quad K=(c, \infty].
+$$
 \subsection{z-Test}
 Normalverteilung, Test für Erwartungswert bei bekannter Varianz: Dieser Test ist unter dem Namen $z$-Test bekannt. Hier sind $X_{1}, \ldots, X_{n}$ i.i.d. $\sim \mathcal{N}\left(\theta, \sigma^{2}\right)$ unter $\mathbb{P}_{\theta}$ mit bekannter Varianz $\sigma^{2}$, und wir wollen die Hypothese $H_{0}: \theta=\theta_{0}$ testen. 
 Mögliche Alternativen $H_{A}$ sind $\theta>\theta_{0}$ oder $\theta<\theta_{0}$ (einseitig), oder $\theta \neq \theta_{0}$ (zweiseitig). 
@@ -912,6 +912,7 @@ Wir können die Intervalle folgender massen wählen:
     \item $\alpha=\mathbb{P}_{\theta_{0}}\left[T<c_{<}\right]=\mathbb{P}_{\theta_{0}}\left[T>-c_{<}\right] = 1 - \mathbb{P}_{\theta_{0}}\left[T \leq -c_{<}\right]=\Phi\left(c_{<}\right)$ 
     \item $\alpha=\mathbb{P}_{\theta_{0}}\left[T \in K_{\neq}\right]=\mathbb{P}_{\theta_{0}}\left[T<-c_{\neq}\right]+\mathbb{P}_{\theta_{0}}\left[T>c_{\neq}\right]=\Phi\left(-c_{\neq}\right)+1-\Phi\left(c_{\neq}\right)=2\left(1-\Phi\left(c_{\neq}\right)\right)$
 \end{enumerate}
+Wobei die $c$ Werte in der Tabelle nachgeschaut werden können und es gilt $c_{\alpha}=-c_{1-\alpha}$.
 \subsection{Der p-Wert}
 \blue{Definition $3.9$ (Geordnete Testsammlung):} Sei $T$ eine Teststatistik. Eine Familie von Tests $\left(T,\left(K_{t}\right)_{t \geq 0}\right)$ heisst geordert bzgl. $\boldsymbol{T}$ falls $K_{t} \subset \mathbb{R}$ und
 $$
