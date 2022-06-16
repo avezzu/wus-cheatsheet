@@ -212,6 +212,7 @@ $a_{\text{i.e. }} \Omega=B_{1} \cup \cdots \cup B_{n}$ mit paarweise disjunkten 
 $$
 \forall i=1, \ldots, n \quad \mathbb{P}\left[B_{i} \mid A\right]=\frac{\mathbb{P}\left[A \mid B_{i}\right] \mathbb{P}\left[B_{i}\right]}{\sum_{j=1}^{n} \mathbb{P}\left[A \mid B_{j}\right] \mathbb{P}\left[B_{j}\right]}
 $$\\
+\textbf{Bemerkung:} Eine Folgerung davon ist $\mathbb{P}[A|B] = \frac{\mathbb{P}[B|A]\cdot \mathbb{P}[A]}{\mathbb{P}[B]}$\\
 \subsection{Unabhängigkeit von Ereignissen}
 \blue{Definition 1.18 (Unabh{\"a}ngigkeit):} Sei $(\Omega, \mathcal{F}, \mathbb{P})$ ein Wahrscheinlichkeitsraum. Zwei Ereignisse $A$ und $B$ heissen unabhängig falls
 $\mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B].$\\
@@ -403,6 +404,7 @@ n \\
 k
 \end{array}\right) p^{k}(1-p)^{n-k}=(p+1-p)^{n}=1
 $$\\
+\textbf{Binomialkoeffizient:} $\binom{n}{k} = \frac{n !}{(n-k) ! \cdot k !}$\\
 \textbf{Symmetrie der Binomialkoeffizienten:} $\left(\begin{array}{l}n \\ k\end{array}\right)=\left(\begin{array}{c}n \\ n-k\end{array}\right)$ \\
 \yellow{Satz $3.13$ (Summe von unabh{\"a}ngigen Bernoulli und Binomial Z.V.):} Sei $0 \leq p \leq 1$, sei $n \in \mathbb{N}$. Seien $X_{1}, \ldots, X_{n}$ unabhängige Bernoulli $Z$.V. mit Parameter $p$. Dann ist
 $$
@@ -480,6 +482,10 @@ Wir schreiben dann stets $T \sim \exp (\lambda)$.\\
     \item $T$ besitzt die Eigenschaft der Gedächnislosigkeit
     $\forall t, s \geq 0 \quad \mathbb{P}[T>t+s \mid T>t]=[T>s] .$
 \end{enumerate}
+Die Verteilungsfunktion sieht folgendermassen aus
+$$
+F_{\lambda}(x)= \begin{cases}1 - e^{-\lambda x} & x \geq 0 \\ 0 & x<0\end{cases}.
+$$
 \subsubsection{Normalverteilung}
 \blue{Definition 3.29:} Eine stetige Zufallsvariable $X$ heisst normal verteilt mit Parametern $m$ und $\sigma^{2}>0$ falls ihre Dichte gegeben ist durch
 $$
@@ -813,10 +819,10 @@ Wir intressieren uns für \textbf{$\sigma^2$}
 
 Für $\mathbb{P}[Z \in [q_{-}, q_{+}]] = 1 - \alpha$ gilt:
 \begin{enumerate}
-    \item $Z = \sqrt{n}\frac{m - \mu}{\sigma} \sim \mathcal{N}\left(0, 1\right)$ wobei $m = \overline{X_n} = \frac{1}{n}\sum_{i = 1}^nX_i: Z \in [-q, q] \iff
-    m - \frac{q}{\sqrt{n}}\sigma \leq \mu \leq m +\frac{q}{\sqrt{n}}\sigma$
-    \item $Z = \sqrt{n}\frac{m - \mu}{S} \sim t_{n - 1}$ wobei $S^2 =  \frac{1}{n - 1}\sum_{i = 1}^n(X_i - \overline{X_n})^2: Z \in [-q, q] \iff
-    m - \frac{q}{\sqrt{n}}S \leq \mu \leq m +\frac{q}{\sqrt{n}}S$
+    \item $Z = \sqrt{n}\frac{m - \mu}{\sigma} \sim \mathcal{N}\left(0, 1\right)$ wobei $m = \overline{X_n} = \frac{1}{n}\sum_{i = 1}^nX_i: Z \in [-q_{1-\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
+    m - \frac{q_{1-\frac{\alpha}{2}}}{\sqrt{n}}\sigma \leq \mu \leq m +\frac{q_{1-\frac{\alpha}{2}}}{\sqrt{n}}\sigma$
+    \item $Z = \sqrt{n}\frac{m - \mu}{S} \sim t_{n - 1}$ wobei $S^2 =  \frac{1}{n - 1}\sum_{i = 1}^n(X_i - \overline{X_n})^2: Z \in [-q_{1-\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
+    m - \frac{q_{1-\frac{\alpha}{2}}}{\sqrt{n}}|S| \leq \mu \leq m +\frac{q_{1-\frac{\alpha}{2}}}{\sqrt{n}}|S|$
     \item $Z = \frac{n}{\sigma^2} \tilde{S^2}\sim \chi^{2}_{n}$ wobei $\tilde{S^2} =  \frac{1}{n}\sum_{i = 1}^n(X_i - \mu)^2: Z \in [q_{\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
     \frac{n\tilde{S^2}}{q_{1-\frac{\alpha}{2}}} \leq \sigma^2 \leq \frac{n\tilde{S^2}}{q_{\frac{\alpha}{2}}}$
     \item $Z = \frac{n - 1}{\sigma^2}S^2 \sim \chi^{2}_{n - 1}$ wobei $S^2 =  \frac{1}{n - 1}\sum_{i = 1}^n(X_i - \overline{X_n})^2: Z \in [q_{\frac{\alpha}{2}}, q_{1-\frac{\alpha}{2}}] \iff
@@ -881,7 +887,13 @@ $\beta: \Theta_{A} \rightarrow[0,1], \quad \theta \mapsto \beta(\theta):=\mathbb
 $$
 R\left(x_{1}, \ldots, x_{n}\right):=\frac{L\left(x_{1}, \ldots, x_{n} ; \theta_{A}\right)}{L\left(x_{1}, \ldots, x_{n} ; \theta_{0}\right)} \text {. }
 $$
-Als Konvention setzten wir $R\left(x_{1}, \ldots, x_{n}\right)=+\infty$, falls $L\left(x_{1}, \ldots, x_{n} ; \theta_{0}\right)=0$.\\
+Als Konvention setzten wir $R\left(x_{1}, \ldots, x_{n}\right)=+\infty$, falls $L\left(x_{1}, \ldots, x_{n} ; \theta_{0}\right)=0$. Die Idee 
+dieses Tests ist, dass man einen einfacheren Test finden kann, der sich änlich verhält wie der Likelihood-Quotienten und den man stattdessen nehmen kann.
+Ein Beispiel wäre $T:=\sum_{i=1}^{n} X_{i}=S_{n}$ für $R\left(x_{1}, \ldots, x_{n} ; \theta_{0}, \theta_{A}\right)$ wobei $X_{1}, \ldots, X_{n} \text { i.i.d. } \sim \operatorname{Be}(\theta)$\\
+\green{Theorem $3.7$ (Neyman-Pearson-Lemma):} Sei $c \geq 0$. Sei $(T, K)$ ein LikelihoodQuotienten-Test mit Parameter c und Signifikanzniveau $\alpha^{*}:=\mathbb{P}_{\theta_{0}}[T>c]$. Ist $\left(T^{\prime}, K^{\prime}\right)$ ein anderer Test mit Signifikanzniveau $\alpha \leq \alpha^{*}$, so gilt
+$$
+\mathbb{P}_{\theta_{A}}\left[T^{\prime} \in K^{\prime}\right] \leq \mathbb{P}_{\theta_{A}}[T \in K]
+$$\\
 \textbf{Bemerkung:} Falls $R \gg 1$, ist $\Theta_{A}$ wahrscheinlicher und falls $R \ll 1$, ist $\Theta_{0}$ wahrscheinlicher.\\
 \blue{Definition 3.6:} Sei $c \geq 0$. Der Likelihood-Quotienten-Test mit Parameter $c$ ist ein Test $(T, K)$, wobei Teststatistik und Verwerfungsbereich gegeben sind durch
 $$
@@ -983,6 +995,10 @@ $\int_{\phi(a)}^{\phi(b)} f(x) d x=\int_{a}^{b} f(\phi(t)) \phi^{\prime}(t) d t$
 \textbf{Mitternachtsformel: } $a x^2 + b x + c = 0 \Longleftrightarrow x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$\\
 \textbf{pq-Formel: } $x^2 + p x + q = 0 \Longleftrightarrow x_{1,2} = - \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$
 \includegraphics[width = 0.3\textwidth]{unit_circle_angles.png}
+\subsection{Reihen}
+\textbf{Geometrische Reihe:} Sei $q \in \mathbb{C}$ mit $|q|<1 .$ Dann konvergiert 
+$\sum_{k=0}^{\infty} q^{k}$ und dessen Wert ist: $\sum_{k=0}^{\infty} q^{k}=\frac{1}{1-q}$. \\
+\textbf{allgemeine Formel für geometrische Reihe: } $\sum_{i = 0}^kp^i= \frac{p^{k + 1}}{p - 1} - \frac{1}{p-1}$
 
 \newpage
 \end{multicols}

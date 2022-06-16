@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  3 JUN 2022 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  16 JUN 2022 10:08
 entering extended mode
 **"c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex"
 (c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex
@@ -752,12 +752,12 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 1
  (C:\Users\aless\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<prob_interpr_sets.png, id=382, 470.25688pt x 254.9525pt>
+<prob_interpr_sets.png, id=386, 470.25688pt x 254.9525pt>
 File: prob_interpr_sets.png Graphic file (type png)
 <use prob_interpr_sets.png>
 Package pdftex.def Info: prob_interpr_sets.png  used on input line 165.
 (pdftex.def)             Requested size: 216.8122pt x 117.5441pt.
-<prob_interpr_two_events.png, id=384, 465.74pt x 214.30063pt>
+<prob_interpr_two_events.png, id=388, 465.74pt x 214.30063pt>
 File: prob_interpr_two_events.png Graphic file (type png)
 <use prob_interpr_two_events.png>
 Package pdftex.def Info: prob_interpr_two_events.png  used on input line 167.
@@ -766,78 +766,78 @@ Package pdftex.def Info: prob_interpr_two_events.png  used on input line 167.
 
 {C:/Users/aless/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/prob_interpr_sets.png> <c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/prob_interpr_two_events.png>]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 349.
+(Font)              scaled to size 10.42007pt on input line 350.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 349.
+(Font)              scaled to size 7.91925pt on input line 350.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 349.
+(Font)              scaled to size 10.42007pt on input line 350.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 349.
+(Font)              scaled to size 7.91925pt on input line 350.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 350.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 350.
 
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 378.
+(hyperref)                removing `math shift' on input line 379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 378.
+(hyperref)                removing `math shift' on input line 379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 378.
+(hyperref)                removing `math shift' on input line 379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 378.
+(hyperref)                removing `subscript' on input line 379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 378.
+(hyperref)                removing `math shift' on input line 379.
 
 [3] [4] [5] [6]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 904.
+(Font)              using `U/stmry/m/n' instead on input line 916.
 
 
-Overfull \hbox (13.0245pt too wide) in paragraph at lines 925--927
+Overfull \hbox (13.0245pt too wide) in paragraph at lines 937--939
 [][]$ 
  []
 
 [7]
-<unit_circle_angles.png, id=503, 1027.84pt x 1027.84pt>
+<unit_circle_angles.png, id=507, 1027.84pt x 1027.84pt>
 File: unit_circle_angles.png Graphic file (type png)
 <use unit_circle_angles.png>
-Package pdftex.def Info: unit_circle_angles.png  used on input line 985.
+Package pdftex.def Info: unit_circle_angles.png  used on input line 997.
 (pdftex.def)             Requested size: 216.8122pt x 216.80946pt.
  [8 <c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/unit_circle_angles.png>] (c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 5002828E22619411B720C482E9329FBD;17057.
+(rerunfilecheck)             Checksum: 705DC40139149A5F7E74C2F6905D6B8D;17144.
  ) 
 Here is how much of TeX's memory you used:
- 24251 strings out of 479334
- 426544 string characters out of 2857085
- 796678 words of memory out of 3000000
- 41039 multiletter control sequences out of 15000+200000
+ 24253 strings out of 479334
+ 426568 string characters out of 2857085
+ 797731 words of memory out of 3000000
+ 41040 multiletter control sequences out of 15000+200000
  443728 words of font info for 138 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,14n,89p,666b,659s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 87i,14n,89p,666b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 513936 bytes).
+Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 516496 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 179 named destinations out of 1000 (max. 500000)
- 780 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 592 PDF objects out of 1000 (max. 8388607)
+ 180 named destinations out of 1000 (max. 500000)
+ 788 words of extra memory for PDF output out of 10000 (max. 10000000)
 
