@@ -992,6 +992,37 @@ g(a)-\int_{a}^{b} f^{\prime}(x) g(x) d x$.\\
 \yellow{Satz $5.31$ (Substitution):} Sei $a<b, \phi:[a, b] \longrightarrow \mathbb{R}$ stetig differenzierbar, 
 $I \subseteq \mathbb{R}$ ein Intervall mit $\phi([a, b]) \subseteq I$ und $f: I \longrightarrow \mathbb{R}$ eine stetige Funktion. Dann gilt:
 $\int_{\phi(a)}^{\phi(b)} f(x) d x=\int_{a}^{b} f(\phi(t)) \phi^{\prime}(t) d t$.\\
+\yellow{Prob. 3.38:} 
+Let $\bar{X} \subset \mathbb{R}^{n}$ and $\bar{Y} \subset \mathbb{R}^{n}$ be compact subsets. Let $\varphi: \bar{X} \rightarrow \bar{Y}$ be a continuous map. We assume that we can write
+$$
+\bar{X}=X \cup B, \quad \bar{Y}=Y \cup C
+$$
+where
+\begin{enumerate}
+        \item the sets $X$ and $Y$ are open
+        \item the sets $B$ and $C$ are negligible
+        \item the restriction of $\varphi$ to the open set $X$ is a $C^{1}$ bijective map from $X$ to $Y$
+\end{enumerate}
+In the situation described above, for any continuous function $f$ on $\bar{Y}$, we have
+$$
+\int_{\bar{X}} f(\varphi(x))\left|\operatorname{det}\left(J_{\varphi}(x)\right)\right| d x=\int_{\bar{Y}} f(y) d y .
+$$\\
+\textbf{Integrale}
+\begin{itemize}
+        \item $\int x^{8} d x=\left\{\begin{array}{ll}\frac{x^{s+1}}{s+1}+C & s \neq-1 \\ \ln x+C & (x>0)\end{array}\right.$
+        \item $\int e^{x} d x=e^{x}+C$
+        \item $\int \sin x d x=-\cos x+C$
+        \item $\int \cos x d x=\sin x+C$
+        \item $\int \sinh x d x=\cosh x+C$
+        \item $\int \cosh x d x=\sinh x+C$
+        \item $\int \frac{1}{\sqrt{1-x^{2}}} d x=\arcsin x+C$
+        \item $\int \frac{1}{1+x^{2}} d x=\arctan x+C$
+        \item $\int \frac{1}{\sqrt{1+x^{2}}} d x=\operatorname{arsinh} x+C$
+        \item $\int \frac{1}{\sqrt{x^{2}-1}} d x=\operatorname{arcosh} x+C$.
+        \item $\int \sin(x)^2 dx = \frac{x}{2} - \frac{\sin(x) \cdot \cos(x)}{2} + C$
+        \item $\int \cos(x)^2 dx = \frac{x}{2} + \frac{\sin(x) \cdot \cos(x)}{2} + C$
+        \item $\int \sin(x) \cdot \cos(x) dx = - \frac{\cos(x)^2}{2} + C$
+\end{itemize}
 \subsection{Allgemeines}
 \textbf{Mitternachtsformel: } $a x^2 + b x + c = 0 \Longleftrightarrow x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$\\
 \textbf{pq-Formel: } $x^2 + p x + q = 0 \Longleftrightarrow x_{1,2} = - \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$
