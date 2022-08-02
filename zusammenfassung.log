@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  29 JUL 2022 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  2 AUG 2022 09:34
 entering extended mode
 **"c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex"
 (c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex
@@ -821,7 +821,7 @@ File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 <unit_circle_angles.png, id=507, 1027.84pt x 1027.84pt>
 File: unit_circle_angles.png Graphic file (type png)
 <use unit_circle_angles.png>
-Package pdftex.def Info: unit_circle_angles.png  used on input line 1029.
+Package pdftex.def Info: unit_circle_angles.png  used on input line 1030.
 (pdftex.def)             Requested size: 216.8122pt x 216.80946pt.
  [8 <c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/unit_circle_angles.png>] (c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.aux)
 
@@ -839,7 +839,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  87i,14n,89p,666b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 520179 bytes).
+Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 520329 bytes).
 PDF statistics:
  597 PDF objects out of 1000 (max. 8388607)
  183 named destinations out of 1000 (max. 500000)
