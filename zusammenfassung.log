@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  2 AUG 2022 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.9)  2 AUG 2022 13:15
 entering extended mode
 **"c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex"
 (c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/zusammenfassung.tex
@@ -752,12 +752,12 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 1
  (C:\Users\aless\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-<prob_interpr_sets.png, id=386, 470.25688pt x 254.9525pt>
+<prob_interpr_sets.png, id=390, 470.25688pt x 254.9525pt>
 File: prob_interpr_sets.png Graphic file (type png)
 <use prob_interpr_sets.png>
 Package pdftex.def Info: prob_interpr_sets.png  used on input line 165.
 (pdftex.def)             Requested size: 216.8122pt x 117.5441pt.
-<prob_interpr_two_events.png, id=388, 465.74pt x 214.30063pt>
+<prob_interpr_two_events.png, id=392, 465.74pt x 214.30063pt>
 File: prob_interpr_two_events.png Graphic file (type png)
 <use prob_interpr_two_events.png>
 Package pdftex.def Info: prob_interpr_two_events.png  used on input line 167.
@@ -814,34 +814,34 @@ Overfull \hbox (13.0245pt too wide) in paragraph at lines 938--940
  []
 
 [7]
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 1012.
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 1014.
  (C:\Users\aless\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )
-<unit_circle_angles.png, id=507, 1027.84pt x 1027.84pt>
+<unit_circle_angles.png, id=511, 1027.84pt x 1027.84pt>
 File: unit_circle_angles.png Graphic file (type png)
 <use unit_circle_angles.png>
-Package pdftex.def Info: unit_circle_angles.png  used on input line 1030.
+Package pdftex.def Info: unit_circle_angles.png  used on input line 1032.
 (pdftex.def)             Requested size: 216.8122pt x 216.80946pt.
  [8 <c:/Users/aless/OneDrive/Dokumente/ETH-Alessandro-PC/4. Semester/Wahrscheinlichkeit und Statistik/wus-cheatsheet/unit_circle_angles.png>] (c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `zusammenfassung.out' has not changed.
-(rerunfilecheck)             Checksum: 952B8717A16DC7AD0F3EBE53C9A9CEE9;17144.
+(rerunfilecheck)             Checksum: DB65C59AE25ACDC30CBAAF26C6315F07;17299.
  ) 
 Here is how much of TeX's memory you used:
- 24280 strings out of 479334
- 426991 string characters out of 2857085
+ 24282 strings out of 479334
+ 427015 string characters out of 2857085
  797731 words of memory out of 3000000
- 41059 multiletter control sequences out of 15000+200000
+ 41060 multiletter control sequences out of 15000+200000
  444899 words of font info for 140 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,89p,666b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/aless/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 520329 bytes).
+Output written on "c:/Users\aless\OneDrive\Dokumente\ETH-Alessandro-PC\4. Semester\Wahrscheinlichkeit und Statistik\wus-cheatsheet\zusammenfassung.pdf" (8 pages, 521208 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 183 named destinations out of 1000 (max. 500000)
- 788 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 601 PDF objects out of 1000 (max. 8388607)
+ 184 named destinations out of 1000 (max. 500000)
+ 796 words of extra memory for PDF output out of 10000 (max. 10000000)
 
