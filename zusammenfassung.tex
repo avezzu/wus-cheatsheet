@@ -957,11 +957,13 @@ Hier $\operatorname{sind} X_{1}, \ldots, X_{n}$ i.i.d. $\sim \mathcal{N}\left(\m
 und $Y_{1}, \ldots, Y_{n}$ i.i.d. $\sim \mathcal{N}\left(\mu_{Y}, \sigma^{2}\right)$ 
 unter $P_{\theta}$. Insbesondere ist $m=n$ und die Varianz beider Stichproben dieselbe. 
 Differenzen $Z_{i}:=X_{I}-Y_{i}$ sind unter $P_{\theta}$ i.i.d. $\mathcal{N}\left(\mu_{X}-\mu_{Y}, 2 \sigma^{2}\right)$. 
-Dann analog $z$ und $t$-Test. (Setzt natürliche Paarung von Daten voraus!)\\
+Dann analog $z$ und $t$-Test. (Setzt natürliche Paarung von Daten voraus!) Dieser Test wird benutzt wenn man 
+ein und dieselbe Stichprobe hast, die man zu zwei unterschiedlichen Zeitpunkten befragt.\\
 \subsection{Ungepaarter Zweiproben-Test}
 Hier sind unter $P_{\theta}$ die Zufallsvariablen $X_{1}, \ldots, X_{n}$ i.i.d. 
 $\sim \mathcal{N}\left(\mu_{X}, \sigma^{2}\right)$ und $Y_{1}, \ldots, Y_{m}$ i.i.d. 
 $\sim \mathcal{N}\left(\mu_{Y}, \sigma^{2}\right)$, wobei die Varianz in beiden Fällen dieselbe ist.
+Dieser Test wird benutzt wenn man zwei verschiedene Gruppen vergleichen möchte, egal ob sie aus einer oder zwei Stichproben stammen.
 \begin{enumerate}
     \item Bei bekannter Varianz:
     $$
@@ -1041,6 +1043,8 @@ $\sum_{k=0}^{\infty} q^{k}$ und dessen Wert ist: $\sum_{k=0}^{\infty} q^{k}=\fra
 \textbf{Summe der ersten $n$ Kubikzahlen:} $\sum_{k=1}^{n} k^{3}=\left(\frac{n(n+1)}{2}\right)^{2}$ \\
 \textbf{Gausssche Summenformel: }$\sum_{k=1}^{n} k=\frac{n(n+1)}{2}$\\
 \textbf{Exponentialfunktion} $\exp (z):=\sum_{n=0}^{\infty} \frac{z^{n}}{n !}$
+\subsection{Schnellnotizen}
+$\mathbb{P}[M<m, L \leq l]=\mathbb{P}[M<m]-\mathbb{P}[M<m, L>l]$
 \newpage
 \end{multicols}
 \end{document}
