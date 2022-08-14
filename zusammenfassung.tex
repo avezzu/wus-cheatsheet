@@ -649,7 +649,8 @@ $$
 X, Y \text { unabhängig } \Longrightarrow \operatorname{Cov}(X, Y)=0 \text {. }
 $$
 Die Umgekehrte Implikation ist falsch (Siehe Serie 6.6). Nichtsdestotrotz sehen wir in Abschnitt 6, dass wir eine Charakterisierung mittels beschränkten und stetigen Testfunktionen erhalten. Mittels Theorem 4.17, erhalten wir folgende Charakterisierung
-$X, Y$ Unabhängig $\Longleftrightarrow \forall \phi, \psi$ stückweise stetig, beschränkt $\operatorname{Cov}(\phi(X), \psi(Y))=0$.
+$X, Y$ Unabhängig $\Longleftrightarrow \forall \phi, \psi$ stückweise stetig, beschränkt $\operatorname{Cov}(\phi(X), \psi(Y))=0$. \\
+\textbf{Bemerkung: } Es gilt $\operatorname{Cov}(X, Y)=0 \Longleftrightarrow \text{ unkorolliert}$.
 \section{Gemeinsame Verteilung}
 \subsection{Gemeinsame diskrete Verteilung}
 \blue{Definition 5.1:} Seien $X_{1}, \ldots, X_{n} n$ diskrete Zufallsvariablen, sei $W_{i} \subset \mathbb{R}$ endlich oder abzählbar, wobei $X_{i} \in W_{i}$ fast sicher gilt. Die gemeinsame Verteilung von $\left(X_{1}, \ldots, X_{n}\right)$ ist eine Familie $p=\left(p\left(x_{1}, \ldots, x_{n}\right)\right)_{x_{1} \in W_{1}, \ldots, x_{n} \in W_{n}}$, wobei jedes Mitglied definiert ist durch
@@ -937,7 +938,9 @@ wobei $G: \mathbb{R}_{+} \rightarrow[0,1]$ mittels $G(t)=\mathbb{P}_{\theta_{0}}
 \textbf{Intuition:} $\mathrm{p}$-Wert ist klein $\Longrightarrow H_{0}$ wird wahrscheinlich verworfen.\\
 \subsection{Beispiel eines realisierten approximativen p-Wert}
 p-Wert $(\omega)=\left.\left.\left.\mathbb{P}_{\theta_{0}}\left[|T|>t_{0}\right]\right|_{t_{0}=T(\omega)} \approx 2 \mathbb{P}_{\theta_{0}}\left[T>t_{0}\right]\right|_{t_{0}=T(\omega)} \approx 2\left(1-\Phi\left(t_{0}\right)\right)\right|_{t_{0}=T(\omega)}$ 
-für $T \stackrel{\text { Approx }}{\approx} \mathcal{N}(0,1)$ unter $\mathbb{P}_{\Theta_{0}}$ und $K:=(-\infty,-c) \cup(+c,+\infty)$.
+für $T \stackrel{\text { Approx }}{\approx} \mathcal{N}(0,1)$ unter $\mathbb{P}_{\Theta_{0}}$ und $K:=(-\infty,-c) \cup(+c,+\infty)$.\\
+\textbf{Bemerkung:} Wir wollen, dass $T$ gerade noch verworfen wird, d.h. insbesondere für den diskreten Fall dass $\left.\mathbb{P}[T \geq t_0]\right|_{t_{0}=T(\omega)}$ 
+für $T \sim \text{Binom}(n,\theta_0)$  unter $\mathbb{P}_{\Theta_{0}}$ und $K = [c,n]$.
 \section{Zusätzliches}
 \subsection{t-Test}
 Normalverteilung, Test für Erwartungswert bei unbekannter Varianz. Hier sind $X_{1}, \ldots, X_{n}$ i.i.d. $\sim$ $\mathcal{N}\left(\mu, \sigma^{2}\right)$ unter $P_{\vec{\theta}}$, wobei $\vec{\theta}=\left(\mu, \sigma^{2}\right)$. Wir wollen die Hypothese $\mu=\mu_{0}$ testen. Die Teststatistik ist:
